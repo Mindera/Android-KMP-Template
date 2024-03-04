@@ -1,0 +1,12 @@
+package com.mindera.spacex.launches.domain.usecase
+
+import com.mindera.coroutines.either.Either
+import com.mindera.spacex.domain.exceptions.Error
+import com.mindera.spacex.launches.domain.model.Launch
+import kotlin.native.ObjCName
+
+@Suppress("FUN_INTERFACE_WITH_SUSPEND_FUNCTION")
+fun interface GetLaunchesUseCase {
+    @ObjCName("callAsFunction")
+    suspend operator fun invoke(): Either<List<Launch>, Error>
+}
