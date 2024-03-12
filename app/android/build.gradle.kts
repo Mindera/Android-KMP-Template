@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.mindera.spacex"
+    namespace = "com.mindera.currencyexchange"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.mindera.spacex"
+        applicationId = "com.mindera.currencyexchange"
         versionCode = 1
         versionName = "1.0"
 

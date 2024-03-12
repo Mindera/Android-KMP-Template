@@ -1,7 +1,7 @@
 import org.gradle.api.Project
 import java.util.Properties
 
-private const val BUILD_IOS = "spacex.build.ios"
+private const val BUILD_IOS = "currencyxxchange.build.ios"
 private val kfProperties = Properties()
 
 private fun Project.getProperty(key: String, default: String): String {

@@ -15,7 +15,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SpaceX"
+rootProject.name = "CurrencyExchange"
 include(":app:android")
 include(":app:desktop")
 include(":app:shared")

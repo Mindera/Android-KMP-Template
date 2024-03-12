@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.compose.multiplatform)
 }
 
-group = "com.mindera.spacex.launches.composables"
+group = "com.mindera.currencyexchange.launches.composables"
 version = "1.0.0"
 
 kotlin {

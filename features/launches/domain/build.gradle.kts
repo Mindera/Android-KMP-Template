@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
 }
 
-group = "com.mindera.spacex.launches.domain"
+group = "com.mindera.currencyexchange.launches.domain"
 version = "1.0.0"
 
 kotlin {
@@ -23,7 +23,7 @@ kotlin {
                 implementation(libs.kotlinx.datetime)
                 implementation(projects.common.coroutinesKtx)
                 implementation(projects.common.domain)
-            }
+                implementation(projects.features.launches.data.remote.mindera.rest.schema)            }
         }
     }
 }

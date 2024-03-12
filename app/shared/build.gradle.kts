@@ -5,9 +5,9 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
 }
 
-val libName = "SpaceXKMP"
+val libName = "CurrencyExchangeKMP"
 val repo = "" // FIXME: add repo here
-group = "com.mindera.spacex"
+group = "com.mindera.currencyexchange"
 version = "1.0.0"
 
 fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.framework(

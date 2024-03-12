@@ -1,7 +1,7 @@
 package com.mindera.client.interceptor
 
-import com.mindera.spacex.domain.exceptions.Error.Generic
-import com.mindera.spacex.domain.exceptions.Error.Network
+import com.mindera.currencyexchange.domain.exceptions.Error.Generic
+import com.mindera.currencyexchange.domain.exceptions.Error.Network
 import io.ktor.client.HttpClientConfig
 import io.ktor.client.plugins.CallRequestExceptionHandler
 import io.ktor.client.plugins.HttpResponseValidator
