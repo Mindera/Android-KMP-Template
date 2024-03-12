@@ -45,7 +45,7 @@ subprojects {
     plugins.withType<JavaBasePlugin> {
         configure<JavaPluginExtension> {
             toolchain {
-                languageVersion.set(of(11))
+                languageVersion.set(of(17))
             }
         }
     }

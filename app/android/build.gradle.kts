@@ -65,4 +65,5 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.precompose)
     implementation(projects.app.navigation)
+    implementation(libs.androidx.test.compose.ui.junit4)
 }
