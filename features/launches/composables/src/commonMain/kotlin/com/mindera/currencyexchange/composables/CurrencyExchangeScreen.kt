@@ -15,7 +15,7 @@ import com.mindera.currencyexchange.launches.domain.model.CurrencyExchangeRespon
 import java.util.Locale
 
 @Composable
-fun LaunchesScreen(
+fun CurrencyExchangeScreen(
     modifier: Modifier = Modifier,
     launches: ImmutableList<CurrencyExchangeResponseItem>,
 ) {

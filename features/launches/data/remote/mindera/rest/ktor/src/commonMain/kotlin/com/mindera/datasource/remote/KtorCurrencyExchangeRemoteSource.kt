@@ -1,6 +1,6 @@
 package com.mindera.datasource.remote
 
-import com.mindera.currencyexchange.launches.domain.datasource.remote.LaunchesRemoteSource
+import com.mindera.currencyexchange.launches.domain.datasource.remote.CurrencyExchangeRemoteSource
 import com.mindera.datasource.remote.converters.toDomain
 import com.mindera.datasource.remote.converters.toRatesItemDomain
 import com.mindera.rest.CurrencyExchangeResponseItem
@@ -11,10 +11,10 @@ import io.ktor.client.request.get
 import com.mindera.currencyexchange.launches.domain.model.CurrencyExchangeResponseItem as DomainCurrencyExchangeResponseItem
 import com.mindera.currencyexchange.launches.domain.model.RatesItem as DomainRates
 
-class KtorLaunchesRemoteSource constructor(
+class KtorCurrencyExchangeRemoteSource constructor(
     private val baseUrl: String,
     private val client: HttpClient,
-): LaunchesRemoteSource {
+): CurrencyExchangeRemoteSource {
 
     override suspend fun getCurrencyExchange(): List<DomainCurrencyExchangeResponseItem> =
         getCurrencyExchange("A").zip(getCurrencyExchange("B")) { listA, listB ->

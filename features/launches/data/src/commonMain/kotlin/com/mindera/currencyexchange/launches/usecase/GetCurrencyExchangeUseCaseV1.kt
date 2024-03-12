@@ -2,18 +2,18 @@ package com.mindera.currencyexchange.launches.usecase
 
 import com.mindera.coroutines.either.Either
 import com.mindera.currencyexchange.domain.exceptions.Error
-import com.mindera.currencyexchange.launches.domain.datasource.remote.LaunchesRemoteSource
+import com.mindera.currencyexchange.launches.domain.datasource.remote.CurrencyExchangeRemoteSource
 import com.mindera.currencyexchange.launches.domain.model.CurrencyExchangeResponseItem
-import com.mindera.currencyexchange.launches.domain.usecase.GetLaunchesUseCase
+import com.mindera.currencyexchange.launches.domain.usecase.GetCurrencyExchangeUseCase
 import kotlinx.coroutines.Dispatchers.Default
 import kotlinx.coroutines.withContext
 
 /**
  * Returns Either<List<Launch>, Error>
  */
-class GetLaunchesUseCaseV1 constructor(
-    private val remote: LaunchesRemoteSource,
-) : GetLaunchesUseCase {
+class GetCurrencyExchangeUseCaseV1 constructor(
+    private val remote: CurrencyExchangeRemoteSource,
+) : GetCurrencyExchangeUseCase {
 
     /**
      * Returns Either<List<Launch>, Error>

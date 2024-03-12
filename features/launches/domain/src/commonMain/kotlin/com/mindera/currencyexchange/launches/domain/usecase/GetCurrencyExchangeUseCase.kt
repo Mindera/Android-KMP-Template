@@ -6,7 +6,7 @@ import com.mindera.currencyexchange.launches.domain.model.CurrencyExchangeRespon
 import kotlin.native.ObjCName
 
 @Suppress("FUN_INTERFACE_WITH_SUSPEND_FUNCTION")
-fun interface GetLaunchesUseCase {
+fun interface GetCurrencyExchangeUseCase {
     @ObjCName("callAsFunction")
     suspend operator fun invoke(): Either<List<CurrencyExchangeResponseItem>, Error>
 }

@@ -8,18 +8,18 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 import com.mindera.client.configureHttpClient
-import com.mindera.currencyexchange.composables.LaunchesScreen
-import com.mindera.currencyexchange.launches.usecase.GetLaunchesUseCaseV1
-import com.mindera.currencyexchange.launches.viewmodel.LaunchesViewModel
-import com.mindera.datasource.remote.KtorLaunchesRemoteSource
+import com.mindera.currencyexchange.composables.CurrencyExchangeScreen
+import com.mindera.currencyexchange.launches.usecase.GetCurrencyExchangeUseCaseV1
+import com.mindera.currencyexchange.launches.viewmodel.CurrencyExchangeViewModel
+import com.mindera.datasource.remote.KtorCurrencyExchangeRemoteSource
 import com.mindera.precompose.navigation.BackHandler
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.logging.LogLevel
 
 // FIXME: Implement proper dependency injection (using kotlin-inject or Koin 🤷‍️)
-val viewModel = LaunchesViewModel(
-    getLaunches = GetLaunchesUseCaseV1(
-        remote = KtorLaunchesRemoteSource(
+val viewModel = CurrencyExchangeViewModel(
+    getCurrencyExchange = GetCurrencyExchangeUseCaseV1(
+        remote = KtorCurrencyExchangeRemoteSource(
             baseUrl = "https://api.nbp.pl/api/exchangerates/tables",
             client = configureHttpClient(OkHttp, 10_000L, LogLevel.ALL)
         )
@@ -27,7 +27,7 @@ val viewModel = LaunchesViewModel(
 )
 
 @Composable
-fun LaunchesScene(onBack: (() -> Unit)) {
+fun CurrencyExchangeScene(onBack: (() -> Unit)) {
     BackHandler(onBack = onBack)
 
     val state = viewModel.state.collectAsState()
@@ -37,7 +37,7 @@ fun LaunchesScene(onBack: (() -> Unit)) {
             text = "Currency Exchange",
             fontSize = 40.sp,
         )
-        LaunchesScreen(
+        CurrencyExchangeScreen(
             launches = state.value.launches
         )
     }

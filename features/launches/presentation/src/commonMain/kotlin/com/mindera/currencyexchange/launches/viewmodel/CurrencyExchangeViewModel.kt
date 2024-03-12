@@ -5,13 +5,13 @@ import com.mindera.compose.collections.immutable
 import com.mindera.coroutines.either.on
 import com.mindera.currencyexchange.domain.exceptions.Error
 import com.mindera.currencyexchange.launches.domain.model.CurrencyExchangeResponseItem
-import com.mindera.currencyexchange.launches.domain.usecase.GetLaunchesUseCase
+import com.mindera.currencyexchange.launches.domain.usecase.GetCurrencyExchangeUseCase
 import com.mindera.lifecycle.ViewModel
 import com.mindera.lifecycle.launch
 import kotlinx.coroutines.flow.MutableStateFlow
 
-class LaunchesViewModel constructor(
-    private val getLaunches: GetLaunchesUseCase,
+class CurrencyExchangeViewModel constructor(
+    private val getCurrencyExchange: GetCurrencyExchangeUseCase,
 ) : ViewModel() {
     data class State(
         val loading: Boolean = true,
@@ -24,7 +24,7 @@ class LaunchesViewModel constructor(
 
     init {
         launch {
-            getLaunches().on(
+            getCurrencyExchange().on(
                 left = {
                     println(">>> Rates: $it")
                     state.value = with(state.value) {

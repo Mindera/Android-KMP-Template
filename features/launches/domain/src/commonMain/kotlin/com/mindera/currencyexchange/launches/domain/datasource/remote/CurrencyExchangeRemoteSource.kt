@@ -4,7 +4,7 @@ import com.mindera.currencyexchange.launches.domain.model.CurrencyExchangeRespon
 import com.mindera.rest.RatesItem
 import com.mindera.currencyexchange.launches.domain.model.RatesItem as DomainRatesItem
 
-interface LaunchesRemoteSource {
+interface CurrencyExchangeRemoteSource {
 
     suspend fun getCurrencyExchange(): List<CurrencyExchangeResponseItem>
 
