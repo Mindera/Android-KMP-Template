@@ -69,4 +69,5 @@ dependencies {
     implementation(projects.features.launches.presentation)
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
+    implementation(projects.features.launches.di)
 }

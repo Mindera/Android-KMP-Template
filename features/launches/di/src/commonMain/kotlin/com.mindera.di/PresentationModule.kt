@@ -1,4 +1,4 @@
-package com.mindera.currencyexchange.launches.di
+package com.mindera.di
 
 import com.mindera.client.configureHttpClient
 import com.mindera.currencyexchange.launches.domain.datasource.remote.CurrencyExchangeRemoteSource
@@ -10,7 +10,7 @@ import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.logging.LogLevel
 import org.koin.dsl.module
 
-fun presentationModule() = module {
+fun appModule() = module {
 
     factory { configureHttpClient(OkHttp, 10_000L, LogLevel.ALL) }
 

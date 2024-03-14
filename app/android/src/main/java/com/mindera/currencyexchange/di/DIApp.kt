@@ -1,7 +1,7 @@
 package com.mindera.currencyexchange.di
 
 import android.app.Application
-import com.mindera.currencyexchange.launches.di.presentationModule
+import com.mindera.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -12,7 +12,7 @@ class DIApp : Application() {
         startKoin {
             androidContext(this@DIApp)
             modules(
-                listOf(presentationModule())
+                listOf(appModule())
             )
         }
     }
