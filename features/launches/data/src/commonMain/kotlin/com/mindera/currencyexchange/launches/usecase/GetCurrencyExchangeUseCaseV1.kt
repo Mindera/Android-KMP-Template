@@ -25,4 +25,6 @@ class GetCurrencyExchangeUseCaseV1 constructor(
             Either.Right(e)
         }
     }
+
+    fun testFunction() = "Test DI"
 }

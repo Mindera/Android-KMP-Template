@@ -66,4 +66,7 @@ dependencies {
     implementation(libs.precompose)
     implementation(projects.app.navigation)
     implementation(libs.androidx.test.compose.ui.junit4)
+    implementation(projects.features.launches.presentation)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
 }

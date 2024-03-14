@@ -5,31 +5,24 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
-import com.mindera.client.configureHttpClient
 import com.mindera.currencyexchange.composables.CurrencyExchangeScreen
-import com.mindera.currencyexchange.launches.usecase.GetCurrencyExchangeUseCaseV1
 import com.mindera.currencyexchange.launches.viewmodel.CurrencyExchangeViewModel
-import com.mindera.datasource.remote.KtorCurrencyExchangeRemoteSource
 import com.mindera.precompose.navigation.BackHandler
-import io.ktor.client.engine.okhttp.OkHttp
-import io.ktor.client.plugins.logging.LogLevel
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-// FIXME: Implement proper dependency injection (using kotlin-inject or Koin 🤷‍️)
-val viewModel = CurrencyExchangeViewModel(
-    getCurrencyExchange = GetCurrencyExchangeUseCaseV1(
-        remote = KtorCurrencyExchangeRemoteSource(
-            baseUrl = "https://api.nbp.pl/api/exchangerates/tables",
-            client = configureHttpClient(OkHttp, 10_000L, LogLevel.ALL)
-        )
-    )
-)
+class KoinHelper : KoinComponent {
+    val viewModel : CurrencyExchangeViewModel by inject()
+}
 
 @Composable
 fun CurrencyExchangeScene(onBack: (() -> Unit)) {
     BackHandler(onBack = onBack)
 
+    val viewModel = remember { KoinHelper().viewModel }
     val state = viewModel.state.collectAsState()
 
     Column(modifier = Modifier.fillMaxSize()) {

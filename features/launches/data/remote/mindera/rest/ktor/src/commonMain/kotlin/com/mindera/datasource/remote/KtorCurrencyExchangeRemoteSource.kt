@@ -14,21 +14,22 @@ import com.mindera.currencyexchange.launches.domain.model.RatesItem as DomainRat
 class KtorCurrencyExchangeRemoteSource constructor(
     private val baseUrl: String,
     private val client: HttpClient,
-): CurrencyExchangeRemoteSource {
+) : CurrencyExchangeRemoteSource {
 
     override suspend fun getCurrencyExchange(): List<DomainCurrencyExchangeResponseItem> =
         getCurrencyExchange("A").zip(getCurrencyExchange("B")) { listA, listB ->
             DomainCurrencyExchangeResponseItem(listA.rates + listB.rates)
         }
 
-    private suspend fun getCurrencyExchange(table: String): List<DomainCurrencyExchangeResponseItem> = client.get("$baseUrl/$table")
-        .body<List<CurrencyExchangeResponseItem>>().map {
-            val list = ArrayList<DomainRates>()
-            it.rates.forEach {rItem ->
-                list.add(getCurrencyExchangeRates(rItem))
+    private suspend fun getCurrencyExchange(table: String): List<DomainCurrencyExchangeResponseItem> =
+        client.get("$baseUrl/$table")
+            .body<List<CurrencyExchangeResponseItem>>().map {
+                val list = ArrayList<DomainRates>()
+                it.rates.forEach { rItem ->
+                    list.add(getCurrencyExchangeRates(rItem))
+                }
+                it.toDomain(list)
             }
-            it.toDomain(list)
-        }
 
 
     override suspend fun getCurrencyExchangeRates(item: RatesItem): DomainRates =

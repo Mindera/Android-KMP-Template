@@ -37,6 +37,7 @@ kotlin {
                 implementation(libs.kotlinx.serialization)
                 implementation(libs.ktor.logging)
                 implementation(libs.ktor.okhttp)
+                implementation(libs.koin.core)
             }
         }
     }

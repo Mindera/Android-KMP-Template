@@ -1,0 +1,19 @@
+package com.mindera.currencyexchange.di
+
+import android.app.Application
+import com.mindera.currencyexchange.launches.di.presentationModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
+
+class DIApp : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            androidContext(this@DIApp)
+            modules(
+                listOf(presentationModule())
+            )
+        }
+    }
+}
