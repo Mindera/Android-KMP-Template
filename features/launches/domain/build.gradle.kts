@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
 }
 
-group = "com.mindera.currencyexchange.launches.domain"
+group = "com.mindera.kmpexample.launches.domain"
 version = "1.0.0"
 
 kotlin {

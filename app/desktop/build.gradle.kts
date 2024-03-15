@@ -8,7 +8,7 @@ plugins {
     alias(libs.plugins.compose.multiplatform)
 }
 
-group = "com.mindera.currencyexchange"
+group = "com.mindera.kmpexample"
 version = "1.0-SNAPSHOT"
 
 kotlin {

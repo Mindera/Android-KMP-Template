@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.mindera.currencyexchange"
+    namespace = "com.mindera.kmpexample"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.mindera.currencyexchange"
+        applicationId = "com.mindera.kmpexample"
         versionCode = 1
         versionName = "1.0"
 

@@ -7,7 +7,7 @@ plugins {
 
 val libName = "CurrencyExchangeKMP"
 val repo = "" // FIXME: add repo here
-group = "com.mindera.currencyexchange"
+group = "com.mindera.kmpexample"
 version = "1.0.0"
 
 fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.framework(

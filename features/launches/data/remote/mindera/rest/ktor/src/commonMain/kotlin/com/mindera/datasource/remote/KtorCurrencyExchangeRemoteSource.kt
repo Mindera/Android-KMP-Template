@@ -1,15 +1,15 @@
 package com.mindera.datasource.remote
 
-import com.mindera.currencyexchange.launches.domain.datasource.remote.CurrencyExchangeRemoteSource
 import com.mindera.datasource.remote.converters.toDomain
 import com.mindera.datasource.remote.converters.toRatesItemDomain
+import com.mindera.kmpexample.launches.domain.datasource.remote.CurrencyExchangeRemoteSource
 import com.mindera.rest.CurrencyExchangeResponseItem
 import com.mindera.rest.RatesItem
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
-import com.mindera.currencyexchange.launches.domain.model.CurrencyExchangeResponseItem as DomainCurrencyExchangeResponseItem
-import com.mindera.currencyexchange.launches.domain.model.RatesItem as DomainRates
+import com.mindera.kmpexample.launches.domain.model.CurrencyExchangeResponseItem as DomainCurrencyExchangeResponseItem
+import com.mindera.kmpexample.launches.domain.model.RatesItem as DomainRates
 
 class KtorCurrencyExchangeRemoteSource constructor(
     private val baseUrl: String,
