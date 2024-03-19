@@ -21,6 +21,7 @@ kotlin {
                 implementation(projects.features.launches.data)
                 implementation(projects.features.launches.data.remote.mindera.rest.ktor)
                 implementation(projects.common.api.mindera.rest.ktor)
+                implementation(projects.common.api.mindera.rest.ktor.interceptors)
 
                 implementation(libs.ktor.logging)
                 implementation(libs.ktor.okhttp)
@@ -28,6 +29,22 @@ kotlin {
                 implementation(libs.ktor.core)
                 implementation(libs.ktor.content.negotiation)
 
+            }
+        }
+
+        if (iOSEnabled) {
+            val iosX64Main by getting
+            val iosArm64Main by getting
+            val iosSimulatorArm64Main by getting
+            val iosMain by creating {
+                dependsOn(commonMain)
+                iosX64Main.dependsOn(this)
+                iosArm64Main.dependsOn(this)
+                iosSimulatorArm64Main.dependsOn(this)
+                dependencies {
+                    implementation(libs.ktor.darwin)
+                    implementation(projects.common.api.mindera.rest.ktor)
+                }
             }
         }
     }
