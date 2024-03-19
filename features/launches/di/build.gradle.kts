@@ -21,7 +21,6 @@ kotlin {
                 implementation(projects.features.launches.data)
                 implementation(projects.features.launches.data.remote.mindera.rest.ktor)
                 implementation(projects.common.api.mindera.rest.ktor)
-                implementation(projects.common.api.mindera.rest.ktor.interceptors)
 
                 implementation(libs.ktor.logging)
                 implementation(libs.ktor.okhttp)
@@ -43,7 +42,6 @@ kotlin {
                 iosSimulatorArm64Main.dependsOn(this)
                 dependencies {
                     implementation(libs.ktor.darwin)
-                    implementation(projects.common.api.mindera.rest.ktor)
                 }
             }
         }
