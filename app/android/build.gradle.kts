@@ -75,4 +75,5 @@ dependencies {
     implementation(libs.ktor.okhttp)
     implementation(libs.ktor.core)
     implementation(libs.ktor.content.negotiation)
+    implementation(projects.features.launches.domain)
 }
