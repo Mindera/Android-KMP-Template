@@ -16,7 +16,6 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-//                implementation(projects.features.launches.presentation)
                 implementation(projects.features.launches.domain)
                 implementation(projects.features.launches.data)
                 implementation(projects.features.launches.data.remote.mindera.rest.ktor)
