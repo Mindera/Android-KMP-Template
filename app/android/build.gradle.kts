@@ -70,4 +70,9 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
     implementation(projects.features.launches.di)
+    implementation(projects.common.api.mindera.rest.ktor)
+    implementation(libs.ktor.logging)
+    implementation(libs.ktor.okhttp)
+    implementation(libs.ktor.core)
+    implementation(libs.ktor.content.negotiation)
 }
