@@ -24,7 +24,6 @@ kotlin {
                 implementation(projects.common.api.mindera.rest.ktor)
 
                 implementation(libs.ktor.logging)
-                implementation(libs.ktor.okhttp)
                 implementation(libs.koin.core)
                 implementation(libs.ktor.core)
                 implementation(libs.ktor.content.negotiation)
@@ -34,6 +33,16 @@ kotlin {
 
         val androidMain by getting {
             dependsOn(commonMain)
+            dependencies {
+                implementation(libs.ktor.okhttp)
+            }
+        }
+
+        val desktopMain by getting {
+            dependsOn(commonMain)
+            dependencies {
+                implementation(libs.ktor.okhttp)
+            }
         }
 
         if (iOSEnabled) {
