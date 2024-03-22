@@ -1,12 +1,14 @@
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.library)
 }
 
 group = "com.mindera.launches.di"
 version = "1.0.0"
 
 kotlin {
-    jvm()
+    androidTarget()
+    jvm("desktop")
     iOS {
         iosX64()
         iosArm64()
@@ -28,6 +30,10 @@ kotlin {
                 implementation(libs.ktor.content.negotiation)
 
             }
+        }
+
+        val androidMain by getting {
+            dependsOn(commonMain)
         }
 
         if (iOSEnabled) {

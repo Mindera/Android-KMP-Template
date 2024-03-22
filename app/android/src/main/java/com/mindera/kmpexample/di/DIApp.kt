@@ -12,7 +12,7 @@ class DIApp : Application() {
         startKoin {
             androidContext(this@DIApp)
             modules(
-                listOf(appModule(), androidModule())
+                listOf(androidModule(), appModule())
             )
         }
     }
