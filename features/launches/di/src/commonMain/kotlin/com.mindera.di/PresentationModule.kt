@@ -8,6 +8,7 @@ import org.koin.dsl.module
 
 fun appModule() = module {
 
+    factory { configureHttpClient() }
 
     single<CurrencyExchangeRemoteSource> {
         KtorCurrencyExchangeRemoteSource(
