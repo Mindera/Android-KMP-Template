@@ -16,7 +16,7 @@ class GetCurrencyExchangeUseCaseV1 constructor(
 ) : GetCurrencyExchangeUseCase {
 
     /**
-     * Returns Either<List<Launch>, Error>
+     * Returns Either<List<CurrencyExchangeResponseItem>, Error>
      */
     override suspend fun invoke(): Either<List<CurrencyExchangeResponseItem>, Error> = withContext(Default) {
         try {
