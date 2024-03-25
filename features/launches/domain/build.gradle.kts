@@ -22,8 +22,7 @@ kotlin {
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.datetime)
                 implementation(projects.common.coroutinesKtx)
-                implementation(projects.common.domain)
-                implementation(projects.features.launches.data.remote.mindera.rest.schema)            }
+                implementation(projects.common.domain)           }
         }
     }
 }
