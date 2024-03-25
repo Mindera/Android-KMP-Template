@@ -59,6 +59,7 @@ private val modules: List<DelegatingProjectDependency> = listOf(
     projects.common.api.mindera.rest.ktor.interceptors,
     projects.common.coroutinesKtx,
     projects.common.domain,
+    projects.features.launches.di,
 )
 
 kotlin {
