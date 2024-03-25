@@ -23,6 +23,8 @@ kotlin {
                 implementation(libs.kotlinx.coroutines.swing)
                 implementation(libs.precompose)
                 implementation(projects.app.navigation)
+                implementation(libs.koin.core)
+                implementation(projects.features.launches.di)
             }
         }
     }
