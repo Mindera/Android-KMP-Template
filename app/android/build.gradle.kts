@@ -67,11 +67,8 @@ dependencies {
     implementation(projects.app.navigation)
     implementation(libs.androidx.test.compose.ui.junit4)
     implementation(projects.features.launches.presentation)
+    implementation(libs.androidx.test.compose.ui.junit4)
+    implementation(projects.features.launches.presentation)
     implementation(libs.koin.android)
     implementation(projects.features.launches.di)
-    implementation(projects.common.api.mindera.rest.ktor)
-    implementation(libs.ktor.logging)
-    implementation(libs.ktor.okhttp)
-    implementation(libs.ktor.core)
-    implementation(projects.features.launches.domain)
 }
