@@ -12,7 +12,7 @@ import moe.tlaster.precompose.navigation.rememberNavigator
 sealed class Destination(
     override val route: String,
 ) : com.mindera.precompose.navigation.Destination {
-    data object CurrencyExchange : Destination("launches")
+    data object CurrencyExchange : Destination("currency-exchange")
 }
 
 @Composable
