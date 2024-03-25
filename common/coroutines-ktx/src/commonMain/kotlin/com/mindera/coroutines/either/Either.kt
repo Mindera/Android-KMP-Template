@@ -48,7 +48,6 @@ sealed class Either<out A, out B> {
     }
 }
 
-@HiddenFromObjC
 inline fun <L, R> Either<L, R>.on(left: (L) -> Unit = {}, right: (R) -> Unit = {}) = when (this) {
     is Left -> left(value)
     is Right -> right(value)
