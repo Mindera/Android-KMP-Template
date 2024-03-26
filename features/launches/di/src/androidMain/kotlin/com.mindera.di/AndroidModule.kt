@@ -1,4 +1,4 @@
-package com.mindera.kmpexample.di
+package com.mindera.di
 
 import com.mindera.kmpexample.launches.viewmodel.CurrencyExchangeViewModel
 import org.koin.dsl.module

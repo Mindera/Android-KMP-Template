@@ -35,6 +35,7 @@ kotlin {
             dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.okhttp)
+                implementation(projects.features.launches.presentation)
             }
         }
 
