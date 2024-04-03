@@ -27,7 +27,7 @@ kotlin {
                 implementation(libs.koin.core)
                 implementation(libs.ktor.core)
                 implementation(libs.ktor.content.negotiation)
-
+                implementation(projects.features.launches.presentation)
             }
         }
 
@@ -35,7 +35,7 @@ kotlin {
             dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.okhttp)
-                implementation(projects.features.launches.presentation)
+
             }
         }
 

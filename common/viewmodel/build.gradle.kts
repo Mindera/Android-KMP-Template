@@ -10,12 +10,18 @@ version = "1.0.0"
 kotlin {
     androidTarget()
     jvm("desktop")
+    iOS {
+        iosX64()
+        iosArm64()
+        iosSimulatorArm64()
+    }
 
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(libs.precompose.viewmodel)
+//                api(libs.precompose.viewmodel)
                 implementation(compose.runtime)
+                implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.0-alpha03")
             }
         }
     }

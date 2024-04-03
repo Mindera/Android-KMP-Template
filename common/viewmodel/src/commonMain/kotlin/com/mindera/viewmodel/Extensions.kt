@@ -24,16 +24,16 @@ fun <VM : ViewModel> create(
     vararg args: Pair<Any, Any?>,
 ): VM = create(klass, mapOf(pairs = args))
 
-@Composable
-fun <VM : ViewModel> viewModel(
-    klass: KClass<VM>,
-    bundle: BundleOfArguments? = null,
-    keys: List<Any?> = emptyList(),
-): VM = moe.tlaster.precompose.viewmodel.viewModel(klass, keys) { create(klass, bundle) }
-
-@Composable
-fun <VM : ViewModel> viewModel(
-    klass: KClass<VM>,
-    vararg args: Pair<Any, Any?>,
-    keys: List<Any?> = emptyList(),
-): VM = viewModel(klass, mapOf(pairs = args), keys)
+//@Composable
+//fun <VM : ViewModel> viewModel(
+//    klass: KClass<VM>,
+//    bundle: BundleOfArguments? = null,
+//    keys: List<Any?> = emptyList(),
+//): VM = moe.tlaster.precompose.viewmodel.viewModel(klass, keys) { create(klass, bundle) }
+//
+//@Composable
+//fun <VM : ViewModel> viewModel(
+//    klass: KClass<VM>,
+//    vararg args: Pair<Any, Any?>,
+//    keys: List<Any?> = emptyList(),
+//): VM = viewModel(klass, mapOf(pairs = args), keys)

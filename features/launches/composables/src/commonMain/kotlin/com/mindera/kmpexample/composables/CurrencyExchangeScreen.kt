@@ -12,7 +12,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.mindera.compose.collections.ImmutableList
 import com.mindera.kmpexample.launches.domain.model.CurrencyExchangeResponseItem
-import java.util.Locale
 
 @Composable
 fun CurrencyExchangeScreen(
@@ -33,7 +32,7 @@ fun CurrencyExchangeScreen(
                 }
                 Text(launch.id)
                 Text(launch.currency.replaceFirstChar {
-                    if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
+                    if (it.isLowerCase()) it.titlecase() else it.toString()
                 })
                 Text(launch.code, color = Color.Blue)
                 Text(launch.currencyRate.toString(), color = Color.Gray)
