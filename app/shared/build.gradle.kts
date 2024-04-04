@@ -60,6 +60,7 @@ private val modules: List<DelegatingProjectDependency> = listOf(
     projects.common.coroutinesKtx,
     projects.common.domain,
     projects.features.launches.di,
+    projects.features.launches.presentation,
 )
 
 kotlin {

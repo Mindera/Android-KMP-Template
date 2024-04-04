@@ -23,7 +23,7 @@ fun CurrencyExchangeScene(onBack: (() -> Unit)) {
     BackHandler(onBack = onBack)
 
     val viewModel = remember { KoinHelper().viewModel }
-    val state = viewModel.state.collectAsState()
+    val state = viewModel.mutableStateFlow.collectAsState()
 
     Column(modifier = Modifier.fillMaxSize()) {
         Text(
