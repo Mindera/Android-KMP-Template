@@ -1,21 +1,26 @@
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.android.library)
 }
 
-group = "com.mindera.spacex.features.launches.presentation"
+group = "com.mindera.kmpexample.features.launches.presentation"
 version = "1.0.0"
 
 kotlin {
-    jvm()
+    androidTarget()
+    jvm("desktop")
+    iOS {
+        iosX64()
+        iosArm64()
+        iosSimulatorArm64()
+    }
+
 
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(compose.foundation)
-                implementation(compose.runtime)
-                implementation(compose.ui)
-                implementation(compose.material3)
+
                 implementation(projects.common.domain)
                 implementation(projects.common.coroutinesKtx)
                 implementation(projects.common.composeKtx)
@@ -36,8 +41,36 @@ kotlin {
                 implementation(libs.ktor.serialization)
                 implementation(libs.kotlinx.serialization)
                 implementation(libs.ktor.logging)
-                implementation(libs.ktor.okhttp)
+                implementation(libs.koin.core)
+
+            }
+        }
+
+        val androidMain by getting {
+            dependsOn(commonMain)
+            dependencies {
+                implementation(compose.foundation)
+                implementation(compose.runtime)
+                implementation(compose.ui)
+                implementation(compose.material3)
+                implementation(libs.lifecycle.viewmodel.ktx)
+            }
+        }
+
+        if (iOSEnabled) {
+            val iosX64Main by getting
+            val iosArm64Main by getting
+            val iosSimulatorArm64Main by getting
+            val iosMain by creating {
+                dependsOn(commonMain)
+                iosX64Main.dependsOn(this)
+                iosArm64Main.dependsOn(this)
+                iosSimulatorArm64Main.dependsOn(this)
+                dependencies {
+                    implementation(libs.lifecycle.viewmodel)
+                }
             }
         }
     }
+
 }

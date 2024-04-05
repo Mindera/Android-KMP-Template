@@ -8,7 +8,7 @@ plugins {
     alias(libs.plugins.compose.multiplatform)
 }
 
-group = "com.mindera.spacex"
+group = "com.mindera.kmpexample"
 version = "1.0-SNAPSHOT"
 
 kotlin {
@@ -23,6 +23,8 @@ kotlin {
                 implementation(libs.kotlinx.coroutines.swing)
                 implementation(libs.precompose)
                 implementation(projects.app.navigation)
+                implementation(libs.koin.core)
+                implementation(projects.features.launches.di)
             }
         }
     }
@@ -33,10 +35,10 @@ compose.desktop {
         mainClass = "MainKt"
         nativeDistributions {
             targetFormats(Dmg, Msi, Deb)
-            packageName = "SpaceX"
+            packageName = "CurrencyExchange"
             packageVersion = "1.0.0"
             version = "1.0-SNAPSHOT"
-            description = "SpaceX"
+            description = "CurrencyExchange"
             copyright = "© 2023 Mindera. No rights reserved."
             vendor = "NoIdea"
             val iconsRoot = project.file("src/jvmMain/resources")
@@ -44,7 +46,7 @@ compose.desktop {
                 iconFile.set(File(iconsRoot, "ic_launcher_round.webp"))
             }
             windows {
-                menuGroup = "SpaceX"
+                menuGroup = "CurrencyExchange"
                 // see https://wixtoolset.org/documentation/manual/v3/howtos/general/generate_guids.html
                 upgradeUuid = "26181E8D-ADC6-4D03-BC67-B642F461AED4"
                 iconFile.set(iconsRoot.resolve("ic_launcher.png"))

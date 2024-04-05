@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.compose.multiplatform)
 }
 
-group = "com.mindera.spacex.navigation"
+group = "com.mindera.kmpexample.navigation"
 version = "1.0.0"
 
 kotlin {

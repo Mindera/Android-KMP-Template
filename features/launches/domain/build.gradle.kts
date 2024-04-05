@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
 }
 
-group = "com.mindera.spacex.launches.domain"
+group = "com.mindera.kmpexample.launches.domain"
 version = "1.0.0"
 
 kotlin {
@@ -22,8 +22,7 @@ kotlin {
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.datetime)
                 implementation(projects.common.coroutinesKtx)
-                implementation(projects.common.domain)
-            }
+                implementation(projects.common.domain)           }
         }
     }
 }

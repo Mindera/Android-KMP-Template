@@ -8,7 +8,13 @@ group = "com.mindera.compose.extensions"
 version = "1.0.0"
 
 kotlin {
-    jvm()
+    androidTarget()
+    jvm("desktop")
+    iOS {
+        iosX64()
+        iosArm64()
+        iosSimulatorArm64()
+    }
 
     sourceSets {
         val commonMain by getting {

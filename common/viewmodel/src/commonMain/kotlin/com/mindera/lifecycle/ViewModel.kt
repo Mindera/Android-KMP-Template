@@ -1,14 +1,14 @@
 package com.mindera.lifecycle
 
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import moe.tlaster.precompose.viewmodel.viewModelScope
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 
-open class ViewModel: moe.tlaster.precompose.viewmodel.ViewModel()
+open class ViewModel: androidx.lifecycle.ViewModel()
 
 fun ViewModel.launch(
     context: CoroutineContext = EmptyCoroutineContext,

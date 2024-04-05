@@ -15,7 +15,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SpaceX"
+rootProject.name = "CurrencyExchange"
 include(":app:android")
 include(":app:desktop")
 include(":app:shared")
@@ -34,3 +34,4 @@ include(":features:launches:data")
 include(":libraries:precompose")
 include(":app:navigation")
 include(":features:launches:data:remote:mindera:rest:sample")
+include(":features:launches:di")

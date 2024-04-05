@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.android.library)
 }
 
-group = "com.mindera.spacex.launches.data"
+group = "com.mindera.kmpexample.launches.data"
 version = "1.0.0"
 
 kotlin {

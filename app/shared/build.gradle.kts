@@ -5,9 +5,9 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
 }
 
-val libName = "SpaceXKMP"
+val libName = "CurrencyExchangeKMP"
 val repo = "" // FIXME: add repo here
-group = "com.mindera.spacex"
+group = "com.mindera.kmpexample"
 version = "1.0.0"
 
 fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.framework(
@@ -59,6 +59,8 @@ private val modules: List<DelegatingProjectDependency> = listOf(
     projects.common.api.mindera.rest.ktor.interceptors,
     projects.common.coroutinesKtx,
     projects.common.domain,
+    projects.features.launches.di,
+    projects.features.launches.presentation,
 )
 
 kotlin {

@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.mindera.spacex"
+    namespace = "com.mindera.kmpexample"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.mindera.spacex"
+        applicationId = "com.mindera.kmpexample"
         versionCode = 1
         versionName = "1.0"
 
@@ -65,4 +65,10 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.precompose)
     implementation(projects.app.navigation)
+    implementation(libs.androidx.test.compose.ui.junit4)
+    implementation(projects.features.launches.presentation)
+    implementation(libs.androidx.test.compose.ui.junit4)
+    implementation(projects.features.launches.presentation)
+    implementation(libs.koin.android)
+    implementation(projects.features.launches.di)
 }
