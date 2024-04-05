@@ -55,7 +55,7 @@ kotlin {
                 implementation(compose.material3)
                 implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0-alpha03")
                 implementation("androidx.activity:activity-compose") {
-                    exclude(group = "androidx.lifecycle", module = "lifecycle-viewmodel-ktx") // Here we are exlcuding the ViewModel dependency
+                    exclude(group = "androidx.lifecycle", module = "lifecycle-viewmodel-ktx")
                 }
             }
         }
@@ -70,7 +70,7 @@ kotlin {
                 iosArm64Main.dependsOn(this)
                 iosSimulatorArm64Main.dependsOn(this)
                 dependencies {
-                    implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.0-alpha03")
+                    implementation(libs.lifecycle.viewmodel)
                 }
             }
         }

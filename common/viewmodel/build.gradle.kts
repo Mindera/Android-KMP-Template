@@ -19,9 +19,8 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-//                api(libs.precompose.viewmodel)
                 implementation(compose.runtime)
-                implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.0-alpha03")
+                implementation(libs.lifecycle.viewmodel)
             }
         }
     }

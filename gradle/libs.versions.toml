@@ -62,6 +62,7 @@ tealium-remotecommands-dispatcher = "1.2.0"
 tealium-remotecommands-firebase = "1.2.0"
 zoomable = "1.4.3"
 koin = "3.5.3"
+lifecycle-viewmodel = "2.8.0-alpha03"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
@@ -182,6 +183,7 @@ optimizely-log = { group = "com.noveogroup.android", name = "android-logger", ve
 
 precompose = { group = "moe.tlaster", name = "precompose", version.ref = "precompose" }
 precompose-viewmodel = { group = "moe.tlaster", name = "precompose-viewmodel", version.ref = "precompose" }
+lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle-viewmodel" }
 
 sqldelight-android-driver = { group = "com.squareup.sqldelight", name = "android-driver", version.ref = "sqldelight" }
 sqldelight-coroutines-extensions = { group = "com.squareup.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight" }
