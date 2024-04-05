@@ -53,10 +53,7 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.ui)
                 implementation(compose.material3)
-                implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0-alpha03")
-                implementation("androidx.activity:activity-compose") {
-                    exclude(group = "androidx.lifecycle", module = "lifecycle-viewmodel-ktx")
-                }
+                implementation(libs.lifecycle.viewmodel.ktx)
             }
         }
 

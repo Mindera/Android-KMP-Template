@@ -184,6 +184,7 @@ optimizely-log = { group = "com.noveogroup.android", name = "android-logger", ve
 precompose = { group = "moe.tlaster", name = "precompose", version.ref = "precompose" }
 precompose-viewmodel = { group = "moe.tlaster", name = "precompose-viewmodel", version.ref = "precompose" }
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle-viewmodel" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel" }
 
 sqldelight-android-driver = { group = "com.squareup.sqldelight", name = "android-driver", version.ref = "sqldelight" }
 sqldelight-coroutines-extensions = { group = "com.squareup.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight" }
