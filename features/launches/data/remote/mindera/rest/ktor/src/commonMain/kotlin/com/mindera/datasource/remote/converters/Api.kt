@@ -5,6 +5,9 @@ import com.mindera.uuid
 
 internal fun CurrencyExchangeResponseItem.toDomain() =
     com.mindera.kmpexample.launches.domain.model.CurrencyExchangeResponseItem(
+        table = table,
+        no = no,
+        effectiveDate = effectiveDate,
         rates = rates.map { it.toDomain() },
     )
 

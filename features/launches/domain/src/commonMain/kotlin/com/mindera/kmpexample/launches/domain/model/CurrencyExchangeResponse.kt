@@ -13,5 +13,11 @@ data class RatesItem(
 
 data class CurrencyExchangeResponseItem(
 
+	val table: String,
+
+	val no: String,
+
+	val effectiveDate: String,
+
 	val rates: List<RatesItem>,
 )

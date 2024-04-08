@@ -31,7 +31,7 @@ fun CurrencyExchangeScene(onBack: (() -> Unit)) {
             fontSize = 40.sp,
         )
         CurrencyExchangeScreen(
-            launches = state.value.launches
+            currencies = state.value.launches
         )
     }
 }
