@@ -4,6 +4,6 @@ import com.mindera.kmpexample.launches.domain.model.CurrencyExchangeResponseItem
 
 interface CurrencyExchangeRemoteSource {
 
-    suspend fun getCurrencyExchange(): List<CurrencyExchangeResponseItem>
+    suspend fun getCurrencyExchange(endpoint: String): List<CurrencyExchangeResponseItem>
 
 }

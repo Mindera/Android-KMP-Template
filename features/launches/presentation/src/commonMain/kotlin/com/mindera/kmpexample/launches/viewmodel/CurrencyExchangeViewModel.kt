@@ -49,7 +49,7 @@ class CurrencyExchangeViewModel constructor(
 
     init {
         launch {
-            getCurrencyExchange().on(
+            getCurrencyExchange("A/last/10/").on(
                 left = {
                     println(">>> Rates: $it")
                     mutableStateFlow.value = with(mutableStateFlow.value) {
