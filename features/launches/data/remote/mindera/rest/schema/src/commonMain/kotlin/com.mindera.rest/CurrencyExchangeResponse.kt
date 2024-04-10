@@ -19,6 +19,15 @@ data class RatesItem(
 @Serializable
 data class CurrencyExchangeResponseItem(
 
+	@SerialName("table")
+	val table: String,
+
+	@SerialName("no")
+	val no: String,
+
+	@SerialName("effectiveDate")
+	val effectiveDate: String,
+
 	@SerialName("rates")
 	val rates: List<RatesItem>,
 )

@@ -16,28 +16,30 @@ import com.mindera.kmpexample.launches.domain.model.CurrencyExchangeResponseItem
 @Composable
 fun CurrencyExchangeScreen(
     modifier: Modifier = Modifier,
-    launches: ImmutableList<CurrencyExchangeResponseItem>,
+    currencies: ImmutableList<CurrencyExchangeResponseItem>,
 ) {
     val lazyListState = rememberLazyListState()
 
-    if (launches.isNotEmpty()) {
+    if (currencies.isNotEmpty()) {
         LazyColumn(
             modifier = modifier.fillMaxWidth(),
             state = lazyListState,
         ) {
-            itemsIndexed(items = launches[0].rates, key = { index, _ -> index }) { index, launch ->
-
-                if (index != 0) {
-                    Divider(thickness = 2.dp)
+            currencies.forEach {
+                itemsIndexed(items = it.rates, key = { index, _ -> index }) { index, launch ->
+                    if (index != 0) {
+                        Divider(thickness = 2.dp)
+                    }
+                    Text(it.no)
+                    Text(launch.id)
+                    Text(launch.currency.replaceFirstChar {
+                        if (it.isLowerCase()) it.titlecase() else it.toString()
+                    })
+                    Text(launch.code, color = Color.Blue)
+                    Text(launch.currencyRate.toString(), color = Color.Gray)
                 }
-                Text(launch.id)
-                Text(launch.currency.replaceFirstChar {
-                    if (it.isLowerCase()) it.titlecase() else it.toString()
-                })
-                Text(launch.code, color = Color.Blue)
-                Text(launch.currencyRate.toString(), color = Color.Gray)
             }
         }
-    }
 
+    }
 }
