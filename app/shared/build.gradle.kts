@@ -6,7 +6,7 @@ plugins {
 }
 
 val libName = "CurrencyExchangeKMP"
-val repo = "" // FIXME: add repo here
+val repo = "https://github.com/Mindera/Android-KMP-Template"
 group = "com.mindera.kmpexample"
 version = "1.0.0"
 
@@ -68,7 +68,7 @@ kotlin {
 //        linkerOpts.add("-lsqlite3")
     }
     tasks {
-        registerPublish(libName, type = "Debug", repo, branch = "main")
-        registerPublish(libName, type = "Release", repo, branch = "main")
+        registerPublish(libName, type = "Debug", repo, branch = "iOS_Framework")
+        registerPublish(libName, type = "Release", repo, branch = "iOS_Framework")
     }
 }
