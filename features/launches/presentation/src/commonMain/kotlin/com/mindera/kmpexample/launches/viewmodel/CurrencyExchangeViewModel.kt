@@ -8,12 +8,8 @@ import com.mindera.kmpexample.launches.domain.model.CurrencyExchangeResponseItem
 import com.mindera.kmpexample.launches.domain.usecase.GetCurrencyExchangeUseCase
 import com.mindera.lifecycle.ViewModel
 import com.mindera.lifecycle.launch
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 
 class CurrencyExchangeViewModel constructor(
     private val getCurrencyExchange: GetCurrencyExchangeUseCase,
@@ -31,27 +27,34 @@ class CurrencyExchangeViewModel constructor(
         get() = mutableStateFlow
 
     fun onChange(provideNewState: ((CurrencyState) -> Unit)) {
-        currencyStateFlow.onEach {
-            provideNewState.invoke(it)
-        }.launchIn(CoroutineScope(Dispatchers.Main))
+        launch {
+            currencyStateFlow.collect {
+                provideNewState.invoke(it)
+            }
+        }
     }
 
 // This example to access data in IOS
-//    class AppViewModel: ObservableObject {
-//        let coreModel : CurrencyExchangeViewModel = DIHelper().viewModel
+//class AppViewModel: ObservableObject {
+//    let coreModel  = DIHelper().viewModel
 //
-//        func fetchData() {
-//            coreModel.onChange { newState in
-//                    print(newState.launches)
-//            }
+//    init() {
+//        coreModel.onChange { newState in
+//                if newState.loading {
+//                    print("Loading")
+//                } else if newState.error != nil {
+//                    print("Error: \(String(describing: newState.error))")
+//                } else {
+//                    print("Response: \(newState.launches)")
+//                }
 //        }
 //    }
+//}
 
     init {
         launch {
             getCurrencyExchange("A/last/10/").on(
                 left = {
-                    println(">>> Rates: $it")
                     mutableStateFlow.value = with(mutableStateFlow.value) {
                         copy(
                             loading = false,
@@ -61,7 +64,6 @@ class CurrencyExchangeViewModel constructor(
                     }
                 },
                 right = {
-                    println(">>> Rates error: $it")
                     mutableStateFlow.value = with(mutableStateFlow.value) {
                         copy(
                             loading = false,
