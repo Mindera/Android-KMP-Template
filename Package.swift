@@ -15,9 +15,14 @@ let package = Package(
             targets: ["CurrencyExchangeKMP"]
         )
     ],
+    dependencies: [
+            .package(url: "https://github.com/Mindera/Android-KMP-Template.git", .branch("iOS_Framework_Debug")),
+            .package(url: "https://github.com/Mindera/Android-KMP-Template.git", .branch("iOS_Framework")),
+        ],
     targets: [
         .binaryTarget(
             name: "CurrencyExchangeKMP",
+            dependencies: ["iOS_Framework_Debug", "iOS_Framework"],
             path: "./CurrencyExchangeKMP.xcframework"
         )
     ]
