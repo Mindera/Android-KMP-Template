@@ -20,15 +20,24 @@ class CurrencyExchangeViewModel constructor(
         val error: Error? = null,
     )
 
-    var mutableStateFlow = MutableStateFlow(value = CurrencyState())
-        private set
+    private var lastTenMutableStateFlow = MutableStateFlow(value = CurrencyState())
+    val lastTenCurrencyStateFlow: StateFlow<CurrencyState>
+        get() = lastTenMutableStateFlow
 
-    val currencyStateFlow: StateFlow<CurrencyState>
-        get() = mutableStateFlow
+    private var currentMutableStateFlow = MutableStateFlow(value = CurrencyState())
+    val currentCurrencyStateFlow: StateFlow<CurrencyState>
+        get() = currentMutableStateFlow
 
-    fun onChange(provideNewState: ((CurrencyState) -> Unit)) {
+    fun onChangeLastTen(provideNewState: ((CurrencyState) -> Unit)) {
         launch {
-            currencyStateFlow.collect {
+            lastTenMutableStateFlow.collect {
+                provideNewState.invoke(it)
+            }
+        }
+    }
+    fun onChangeCurrentDay(provideNewState: ((CurrencyState) -> Unit)) {
+        launch {
+            currentMutableStateFlow.collect {
                 provideNewState.invoke(it)
             }
         }
@@ -55,7 +64,7 @@ class CurrencyExchangeViewModel constructor(
         launch {
             getCurrencyExchange("A/last/10/").on(
                 left = {
-                    mutableStateFlow.value = with(mutableStateFlow.value) {
+                    lastTenMutableStateFlow.value = with(lastTenMutableStateFlow.value) {
                         copy(
                             loading = false,
                             launches = it.immutable(),
@@ -64,7 +73,28 @@ class CurrencyExchangeViewModel constructor(
                     }
                 },
                 right = {
-                    mutableStateFlow.value = with(mutableStateFlow.value) {
+                    lastTenMutableStateFlow.value = with(lastTenMutableStateFlow.value) {
+                        copy(
+                            loading = false,
+                            launches = ImmutableList(emptyList()),
+                            error = it,
+                        )
+                    }
+                },
+            )
+
+            getCurrencyExchange("A").on(
+                left = {
+                    currentMutableStateFlow.value = with(currentMutableStateFlow.value) {
+                        copy(
+                            loading = false,
+                            launches = it.immutable(),
+                            error = null,
+                        )
+                    }
+                },
+                right = {
+                    currentMutableStateFlow.value = with(currentMutableStateFlow.value) {
                         copy(
                             loading = false,
                             launches = ImmutableList(emptyList()),
