@@ -13,6 +13,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import com.mindera.kmpexample.features.launches.presentation.R
@@ -25,23 +26,23 @@ fun CurrencyExchangeBottomBar() {
 
     val bottomNavItems = listOf(
         BottomNavItem(
-            name = "Gold",
-            route = "Gold",
+            name = stringResource(R.string.gold),
+            route = stringResource(R.string.gold),
             icon = ImageVector.vectorResource(id = R.drawable.ic_gold_24),
         ),
         BottomNavItem(
-            name = "CHF exchange",
-            route = "CHF exchange",
+            name = stringResource(R.string.chf_exchange),
+            route = stringResource(R.string.chf_exchange),
             icon = ImageVector.vectorResource(id = R.drawable.ic_currency_24),
         ),
         BottomNavItem(
-            name = "GBP exchange",
-            route = "GBP exchange",
+            name = stringResource(R.string.gbp_exchange),
+            route = stringResource(R.string.gbp_exchange),
             icon =  ImageVector.vectorResource(id = R.drawable.ic_currency_24),
         ),
         BottomNavItem(
-            name = "Settings",
-            route = "Settings",
+            name = stringResource(R.string.settings),
+            route = stringResource(R.string.settings),
             icon = ImageVector.vectorResource(id = R.drawable.ic_setting_24),
         ),
     )

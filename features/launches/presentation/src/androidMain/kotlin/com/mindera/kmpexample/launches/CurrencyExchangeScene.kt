@@ -59,7 +59,7 @@ fun CurrencyExchangeScene(onBack: (() -> Unit)) {
     val lastTenState = viewModel.lastTenCurrencyStateFlow.collectAsState()
     val currentState = viewModel.currentCurrencyStateFlow.collectAsState()
     var tabIndex by remember { mutableStateOf(0) }
-    val tabs = listOf("10 days exchange", "Daily Chart")
+    val tabs = listOf(stringResource(R.string.graph_view), stringResource(R.string.list_view))
 
     val list = ArrayList<Double>()
     currentState.value.launches.forEach {
@@ -128,8 +128,8 @@ fun CurrencyExchangeScene(onBack: (() -> Unit)) {
                 }
             }
             when (tabIndex) {
-                0 -> checked = true
-                1 -> checked = false
+                0 -> checked = false
+                1 -> checked = true
             }
         }
         Box(modifier = Modifier.weight(weight = 1f).fillMaxWidth()) {

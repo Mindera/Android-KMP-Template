@@ -1,4 +1,9 @@
 <resources>
     <string name="mindera">Mindera</string>
-    <string name="viewMode">View mode</string>
+    <string name="graph_view">Graph view</string>
+    <string name="list_view">List view</string>
+    <string name="gold">Gold</string>
+    <string name="chf_exchange">CHF exchange</string>
+    <string name="gbp_exchange">GBP exchange</string>
+    <string name="settings">Settings</string>
 </resources>
