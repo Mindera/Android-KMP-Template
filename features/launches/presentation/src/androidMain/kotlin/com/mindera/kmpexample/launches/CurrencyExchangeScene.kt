@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -19,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -40,6 +42,8 @@ import com.patrykandpatrick.vico.compose.chart.CartesianChartHost
 import com.patrykandpatrick.vico.compose.chart.layer.rememberLineCartesianLayer
 import com.patrykandpatrick.vico.compose.chart.rememberCartesianChart
 import com.patrykandpatrick.vico.compose.chart.zoom.rememberVicoZoomState
+import com.patrykandpatrick.vico.core.axis.AxisPosition
+import com.patrykandpatrick.vico.core.axis.formatter.AxisValueFormatter
 import com.patrykandpatrick.vico.core.model.CartesianChartModelProducer
 import com.patrykandpatrick.vico.core.model.lineSeries
 import org.koin.core.component.KoinComponent
@@ -56,16 +60,27 @@ fun CurrencyExchangeScene(onBack: (() -> Unit)) {
     var checked by remember { mutableStateOf(true) }
     val viewModel = remember { KoinHelper().viewModel }
     val modelProducer = remember { CartesianChartModelProducer.build() }
+
     val lastTenState = viewModel.lastTenCurrencyStateFlow.collectAsState()
     val currentState = viewModel.currentCurrencyStateFlow.collectAsState()
-    var tabIndex by remember { mutableStateOf(0) }
+    var tabIndex by remember { mutableIntStateOf(0) }
     val tabs = listOf(stringResource(R.string.graph_view), stringResource(R.string.list_view))
 
+    val emptyList = emptyList<String>()
+    var bottomAxisValueFormatter: AxisValueFormatter<AxisPosition.Horizontal.Bottom> =
+        AxisValueFormatter { x, _, _ ->
+            emptyList[x.toInt() % 0]
+        }
+
     val list = ArrayList<Double>()
+    val listCurrency = ArrayList<String>()
+
+
     currentState.value.launches.forEach {
         if (it.rates.isNotEmpty()) {
             it.rates.forEachIndexed { index, ratesItem ->
                 list.add(ratesItem.currencyRate)
+                listCurrency.add(ratesItem.code)
                 if (index == it.rates.lastIndex) {
                     LaunchedEffect(Unit) {
                         modelProducer.tryRunTransaction {
@@ -73,6 +88,10 @@ fun CurrencyExchangeScene(onBack: (() -> Unit)) {
                                 series(list)
                             }
                         }
+                    }
+
+                    bottomAxisValueFormatter = AxisValueFormatter{ x, _, _ ->
+                        listCurrency[x.toInt() % listCurrency.size]
                     }
                 }
             }
@@ -138,11 +157,13 @@ fun CurrencyExchangeScene(onBack: (() -> Unit)) {
                     currencies = lastTenState.value.launches
                 )
             } else {
-                CartesianChartHost(
+                CartesianChartHost(modifier = Modifier.fillMaxHeight().padding(bottom = 20.dp),
                     chart = rememberCartesianChart(
                         rememberLineCartesianLayer(),
                         startAxis = rememberStartAxis(),
-                        bottomAxis = rememberBottomAxis(),
+                        bottomAxis = rememberBottomAxis(
+                            valueFormatter = bottomAxisValueFormatter
+                        ),
                     ),
                     modelProducer = modelProducer,
                     zoomState = rememberVicoZoomState(zoomEnabled = false),
