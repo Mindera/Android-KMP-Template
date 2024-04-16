@@ -1,4 +1,4 @@
-package com.mindera.kmpexample.launches
+package com.mindera.kmpexample.launches.currencyexchange
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import com.mindera.kmpexample.features.launches.presentation.R
 
 @Composable
-fun HomeHeaderScene() {
+fun CurrencyExchangeHeaderScene() {
     Row(
         modifier = Modifier.fillMaxWidth().padding(10.dp),
         horizontalArrangement = Arrangement.Center,

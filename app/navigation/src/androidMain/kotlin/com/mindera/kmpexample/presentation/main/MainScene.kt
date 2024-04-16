@@ -2,7 +2,7 @@ package com.mindera.kmpexample.presentation.main
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import com.mindera.kmpexample.launches.CurrencyExchangeScene
+import com.mindera.kmpexample.launches.HomeScreenScene
 import com.mindera.kmpexample.presentation.main.Destination.CurrencyExchange
 import com.mindera.precompose.navigation.NavHost
 import com.mindera.precompose.navigation.scene
@@ -28,7 +28,7 @@ fun MainScene(
         initialRoute = CurrencyExchange,
     ) {
         scene(route = CurrencyExchange) {
-            CurrencyExchangeScene(onBack = onBack)
+            HomeScreenScene(onBack = onBack)
         }
     }
 }

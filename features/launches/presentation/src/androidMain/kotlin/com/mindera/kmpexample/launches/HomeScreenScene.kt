@@ -16,6 +16,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mindera.kmpexample.composables.CurrencyExchangeScreen
+import com.mindera.kmpexample.launches.currencyexchange.CurrencyExchangeHeaderScene
+import com.mindera.kmpexample.launches.currencyexchange.CurrencyExchangeTabRowScene
 import com.mindera.kmpexample.launches.viewmodel.CurrencyExchangeViewModel
 import com.mindera.precompose.navigation.BackHandler
 import com.patrykandpatrick.vico.compose.axis.horizontal.rememberBottomAxis
@@ -36,7 +38,7 @@ class KoinHelper : KoinComponent {
 }
 
 @Composable
-fun CurrencyExchangeScene(onBack: (() -> Unit)) {
+fun HomeScreenScene(onBack: (() -> Unit)) {
     BackHandler(onBack = onBack)
 
     var tabClick by remember { mutableStateOf(0) }
@@ -79,8 +81,8 @@ fun CurrencyExchangeScene(onBack: (() -> Unit)) {
 
 
     Column(modifier = Modifier.fillMaxSize()) {
-        HomeHeaderScene()
-        HomeTabRowScene {
+        CurrencyExchangeHeaderScene()
+        CurrencyExchangeTabRowScene {
             tabClick = it
         }
         Box(modifier = Modifier.weight(weight = 1f).fillMaxWidth()) {
@@ -103,6 +105,6 @@ fun CurrencyExchangeScene(onBack: (() -> Unit)) {
                 )
             }
         }
-        CurrencyExchangeBottomBar()
+        HomeBottomBar()
     }
 }

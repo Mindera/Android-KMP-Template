@@ -1,4 +1,4 @@
-package com.mindera.kmpexample.launches
+package com.mindera.kmpexample.launches.currencyexchange
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.mindera.kmpexample.features.launches.presentation.R
 
 @Composable
-fun HomeTabRowScene(tabClick: (Int) -> Unit) {
+fun CurrencyExchangeTabRowScene(tabClick: (Int) -> Unit) {
     var tabIndex by remember { mutableIntStateOf(0) }
     val tabs = listOf(stringResource(R.string.graph_view), stringResource(R.string.list_view))
     Row(

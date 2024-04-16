@@ -20,7 +20,7 @@ import com.mindera.kmpexample.features.launches.presentation.R
 
 
 @Composable
-fun CurrencyExchangeBottomBar() {
+fun HomeBottomBar() {
 
     var selectedItem by remember { mutableStateOf(0) }
 
