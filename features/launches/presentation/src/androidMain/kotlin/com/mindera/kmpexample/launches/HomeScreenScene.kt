@@ -1,35 +1,45 @@
 package com.mindera.kmpexample.launches
 
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.graphics.Color
 import com.mindera.kmpexample.composables.CurrencyExchangeScreen
 import com.mindera.kmpexample.launches.currencyexchange.CurrencyExchangeHeaderScene
 import com.mindera.kmpexample.launches.currencyexchange.CurrencyExchangeTabRowScene
+import com.mindera.kmpexample.launches.setting.SettingsScene
 import com.mindera.kmpexample.launches.viewmodel.CurrencyExchangeViewModel
 import com.mindera.precompose.navigation.BackHandler
 import com.patrykandpatrick.vico.compose.axis.horizontal.rememberBottomAxis
+import com.patrykandpatrick.vico.compose.axis.rememberAxisGuidelineComponent
+import com.patrykandpatrick.vico.compose.axis.rememberAxisLabelComponent
 import com.patrykandpatrick.vico.compose.axis.vertical.rememberStartAxis
 import com.patrykandpatrick.vico.compose.chart.CartesianChartHost
 import com.patrykandpatrick.vico.compose.chart.layer.rememberLineCartesianLayer
+import com.patrykandpatrick.vico.compose.chart.layer.rememberLineSpec
 import com.patrykandpatrick.vico.compose.chart.rememberCartesianChart
 import com.patrykandpatrick.vico.compose.chart.zoom.rememberVicoZoomState
+import com.patrykandpatrick.vico.compose.component.shape.shader.color
 import com.patrykandpatrick.vico.core.axis.AxisPosition
 import com.patrykandpatrick.vico.core.axis.formatter.AxisValueFormatter
+import com.patrykandpatrick.vico.core.component.shape.shader.DynamicShaders
 import com.patrykandpatrick.vico.core.model.CartesianChartModelProducer
 import com.patrykandpatrick.vico.core.model.lineSeries
+import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -37,10 +47,15 @@ class KoinHelper : KoinComponent {
     val viewModel: CurrencyExchangeViewModel by inject()
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreenScene(onBack: (() -> Unit)) {
     BackHandler(onBack = onBack)
 
+    val coroutineScope = rememberCoroutineScope()
+    val pagerState = rememberPagerState(pageCount = {
+        2
+    })
     var tabClick by remember { mutableStateOf(0) }
     val viewModel = remember { KoinHelper().viewModel }
     val modelProducer = remember { CartesianChartModelProducer.build() }
@@ -55,7 +70,6 @@ fun HomeScreenScene(onBack: (() -> Unit)) {
         AxisValueFormatter { x, _, _ ->
             emptyList[x.toInt() % 0]
         }
-
 
     currentState.value.launches.forEach {
         if (it.rates.isNotEmpty()) {
@@ -79,32 +93,72 @@ fun HomeScreenScene(onBack: (() -> Unit)) {
         }
     }
 
-
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier.fillMaxSize()
+            .background(color = MaterialTheme.colorScheme.background)
+    )
+    {
         CurrencyExchangeHeaderScene()
-        CurrencyExchangeTabRowScene {
-            tabClick = it
-        }
-        Box(modifier = Modifier.weight(weight = 1f).fillMaxWidth()) {
-            if (tabClick == 0) {
-                CartesianChartHost(
-                    modifier = Modifier.fillMaxHeight().padding(bottom = 20.dp),
-                    chart = rememberCartesianChart(
-                        rememberLineCartesianLayer(),
-                        startAxis = rememberStartAxis(),
-                        bottomAxis = rememberBottomAxis(
-                            valueFormatter = bottomAxisValueFormatter
-                        ),
-                    ),
-                    modelProducer = modelProducer,
-                    zoomState = rememberVicoZoomState(zoomEnabled = false),
-                )
+        HorizontalPager(
+            state = pagerState,
+            userScrollEnabled = false,
+            modifier = Modifier.fillMaxSize().weight(1f)
+        ) { page ->
+            if (page == 0) {
+                Column(modifier = Modifier.fillMaxSize()) {
+                    CurrencyExchangeTabRowScene {
+                        tabClick = it
+                    }
+                    if (tabClick == 0) {
+                        CartesianChartHost(
+                            modifier = Modifier.fillMaxHeight()
+                                .background(MaterialTheme.colorScheme.onBackground),
+                            chart = rememberCartesianChart(
+                                rememberLineCartesianLayer(
+                                    listOf(
+                                        rememberLineSpec(
+                                            shader = DynamicShaders.color(
+                                                MaterialTheme.colorScheme.surface
+                                            ),
+                                        )
+                                    )
+                                ),
+                                startAxis = rememberStartAxis(
+                                    guideline = rememberAxisGuidelineComponent(color = Color.Gray),
+                                    axis = rememberAxisGuidelineComponent(color = Color.Gray),
+                                    label = rememberAxisLabelComponent(color = Color.Gray)
+                                ),
+                                bottomAxis = rememberBottomAxis(
+                                    guideline = rememberAxisGuidelineComponent(color = Color.Gray),
+                                    axis = rememberAxisGuidelineComponent(color = Color.Gray),
+                                    label = rememberAxisLabelComponent(color = Color.Gray),
+                                    valueFormatter = bottomAxisValueFormatter,
+                                ),
+                            ),
+                            modelProducer = modelProducer,
+                            zoomState = rememberVicoZoomState(zoomEnabled = false),
+                        )
+                    } else {
+                        CurrencyExchangeScreen(
+                            currencies = lastTenState.value.launches
+                        )
+                    }
+                }
             } else {
-                CurrencyExchangeScreen(
-                    currencies = lastTenState.value.launches
-                )
+                SettingsScene{
+                    coroutineScope.launch {
+                        tabClick = 0
+                        pagerState.scrollToPage(0)
+                    }
+                }
             }
         }
-        HomeBottomBar()
+
+        HomeBottomBar {
+            coroutineScope.launch {
+                pagerState.scrollToPage(it)
+                tabClick = 0
+            }
+        }
     }
 }

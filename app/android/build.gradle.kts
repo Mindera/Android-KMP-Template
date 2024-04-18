@@ -71,4 +71,5 @@ dependencies {
     implementation(projects.features.launches.presentation)
     implementation(libs.koin.android)
     implementation(projects.features.launches.di)
+    implementation(projects.features.launches.data.remote.mindera.rest.sample)
 }

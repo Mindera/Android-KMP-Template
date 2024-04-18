@@ -1,7 +1,6 @@
 package com.mindera.kmpexample.composables
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,6 +15,8 @@ import androidx.compose.material.icons.outlined.KeyboardArrowDown
 import androidx.compose.material.icons.outlined.KeyboardArrowUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -73,9 +74,9 @@ fun heading(
     index:Int
 ) {
     Card(
-        modifier = Modifier.fillMaxWidth().padding(vertical = 2.dp),
-        colors = CardDefaults.cardColors(Color.White),
-        elevation = CardDefaults.cardElevation(1.dp),
+        modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp),
+        colors = CardDefaults.cardColors(MaterialTheme.colorScheme.secondary),
+        elevation = CardDefaults.cardElevation(5.dp),
         shape = RectangleShape
     ) {
         Row(
@@ -88,14 +89,15 @@ fun heading(
             },
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(text = currencies.effectiveDate, color = Color.Black, fontSize = 20.sp)
-            Image(
+            Text(text = currencies.effectiveDate, color = MaterialTheme.colorScheme.onPrimary, fontSize = 20.sp)
+            Icon(
                 imageVector = if (isExpandedMap[index] == null || !isExpandedMap[index]!!) {
                     Icons.Outlined.KeyboardArrowDown
                 } else {
                     Icons.Outlined.KeyboardArrowUp
                 },
-                contentDescription = null
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onPrimary
             )
         }
     }
