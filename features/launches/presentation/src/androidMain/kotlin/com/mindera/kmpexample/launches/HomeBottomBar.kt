@@ -31,8 +31,8 @@ fun HomeBottomBar(onNavBarClick: (Int) -> Unit) {
 //            icon = ImageVector.vectorResource(id = R.drawable.ic_gold_24),
 //        ),
         BottomNavItem(
-            name = stringResource(R.string.chf_exchange),
-            route = stringResource(R.string.chf_exchange),
+            name = stringResource(R.string.currency_exchange),
+            route = stringResource(R.string.currency_exchange),
             icon = ImageVector.vectorResource(id = R.drawable.ic_currency_24),
         ),
 //        BottomNavItem( TODO Will be enable in the future

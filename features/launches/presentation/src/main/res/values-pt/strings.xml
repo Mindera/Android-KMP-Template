@@ -3,6 +3,7 @@
     <string name="graph_view">Visualização de gráfico</string>
     <string name="list_view">Visualização de lista</string>
     <string name="gold">Ouro</string>
+    <string name="currency_exchange">Câmbio monetário</string>
     <string name="chf_exchange">Câmbio CHF</string>
     <string name="gbp_exchange">Câmbio GBP</string>
     <string name="settings">Configurações</string>
