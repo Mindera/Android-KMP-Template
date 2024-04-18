@@ -80,7 +80,6 @@ fun heading(
     ) {
         Row(
             modifier =  Modifier.fillMaxWidth().padding(15.dp).clickable {
-                println("CLick >> ${isExpandedMap[index]}")
                 if (isExpandedMap[index] == null){
                     isExpandedMap[index] = true
                 } else {
