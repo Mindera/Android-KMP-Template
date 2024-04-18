@@ -8,7 +8,7 @@
 
 @class CEKMPKoin_coreKoin, CEKMPDIHelper, CEKMPCurrencyExchangeViewModel, CEKMPKotlinArray<T>, CEKMPLifecycle_viewmodelViewModel, CEKMPViewmodelViewModel, CEKMPCurrencyExchangeViewModelCurrencyState, CEKMPCurrencyExchangeResponseItem, CEKMPError, CEKMPEither<__covariant A, __covariant B>, CEKMPKtor_client_coreHttpClient, CEKMPRatesItem, CEKMPKtor_client_coreHttpClientEngineConfig, CEKMPDarwin, CEKMPEitherLeft<__covariant A>, CEKMPKotlinNothing, CEKMPEitherRight<__covariant B>, CEKMPKotlinThrowable, CEKMPErrorCompanion, CEKMPErrorGeneric, CEKMPErrorNetwork, CEKMPErrorNotFound, CEKMPErrorUnauthorized, CEKMPKtor_client_coreHttpClientConfig<T>, CEKMPKoin_coreModule, CEKMPKtor_client_loggingLogLevel, CEKMPKoin_coreScope, CEKMPKoin_coreParametersHolder, CEKMPKotlinLazyThreadSafetyMode, CEKMPKoin_coreLogger, CEKMPKoin_coreExtensionManager, CEKMPKoin_coreInstanceRegistry, CEKMPKoin_corePropertyRegistry, CEKMPKoin_coreScopeRegistry, CEKMPKotlinException, CEKMPKotlinRuntimeException, CEKMPKotlinIllegalStateException, CEKMPKtor_eventsEvents, CEKMPKtor_client_coreHttpReceivePipeline, CEKMPKtor_client_coreHttpRequestPipeline, CEKMPKtor_client_coreHttpResponsePipeline, CEKMPKtor_client_coreHttpSendPipeline, CEKMPKtor_client_coreHttpRequestData, CEKMPKtor_client_coreHttpResponseData, CEKMPKotlinx_coroutines_coreCoroutineDispatcher, CEKMPKtor_client_coreProxyConfig, CEKMPKtor_utilsAttributeKey<T>, CEKMPKoin_coreKoinDefinition<R>, CEKMPKoin_coreInstanceFactory<T>, CEKMPKoin_coreSingleInstanceFactory<T>, CEKMPKoin_coreScopeDSL, CEKMPKotlinEnumCompanion, CEKMPKotlinEnum<E>, CEKMPKoin_coreLockable, CEKMPStately_concurrencyThreadLocalRef<T>, CEKMPKoin_coreLevel, CEKMPKoin_coreScopeRegistryCompanion, CEKMPKtor_eventsEventDefinition<T>, CEKMPKtor_utilsPipelinePhase, CEKMPKtor_utilsPipeline<TSubject, TContext>, CEKMPKtor_client_coreHttpReceivePipelinePhases, CEKMPKtor_client_coreHttpResponse, CEKMPKotlinUnit, CEKMPKtor_client_coreHttpRequestPipelinePhases, CEKMPKtor_client_coreHttpRequestBuilder, CEKMPKtor_client_coreHttpResponsePipelinePhases, CEKMPKtor_client_coreHttpResponseContainer, CEKMPKtor_client_coreHttpClientCall, CEKMPKtor_client_coreHttpSendPipelinePhases, CEKMPKtor_httpUrl, CEKMPKtor_httpHttpMethod, CEKMPKtor_httpOutgoingContent, CEKMPKtor_httpHttpStatusCode, CEKMPKtor_utilsGMTDate, CEKMPKtor_httpHttpProtocolVersion, CEKMPKotlinAbstractCoroutineContextElement, CEKMPKotlinx_coroutines_coreCoroutineDispatcherKey, CEKMPKoin_coreBeanDefinition<T>, CEKMPKoin_coreInstanceFactoryCompanion, CEKMPKoin_coreInstanceContext, CEKMPKtor_httpHeadersBuilder, CEKMPKtor_client_coreHttpRequestBuilderCompanion, CEKMPKtor_httpURLBuilder, CEKMPKtor_utilsTypeInfo, CEKMPKtor_client_coreHttpClientCallCompanion, CEKMPKtor_httpUrlCompanion, CEKMPKtor_httpURLProtocol, CEKMPKtor_httpHttpMethodCompanion, CEKMPKtor_httpContentType, CEKMPKotlinCancellationException, CEKMPKtor_httpHttpStatusCodeCompanion, CEKMPKtor_utilsGMTDateCompanion, CEKMPKtor_utilsWeekDay, CEKMPKtor_utilsMonth, CEKMPKtor_httpHttpProtocolVersionCompanion, CEKMPKotlinAbstractCoroutineContextKey<B, E>, CEKMPKoin_coreKind, CEKMPKoin_coreCallbacks<T>, CEKMPKtor_ioMemory, CEKMPKtor_ioChunkBuffer, CEKMPKotlinByteArray, CEKMPKtor_ioBuffer, CEKMPKtor_ioByteReadPacket, CEKMPKtor_utilsStringValuesBuilderImpl, CEKMPKtor_httpURLBuilderCompanion, CEKMPKtor_httpURLProtocolCompanion, CEKMPKtor_httpHeaderValueParam, CEKMPKtor_httpHeaderValueWithParametersCompanion, CEKMPKtor_httpHeaderValueWithParameters, CEKMPKtor_httpContentTypeCompanion, CEKMPKtor_utilsWeekDayCompanion, CEKMPKtor_utilsMonthCompanion, CEKMPKtor_ioMemoryCompanion, CEKMPKtor_ioBufferCompanion, CEKMPKtor_ioChunkBufferCompanion, CEKMPKotlinByteIterator, CEKMPKtor_ioInputCompanion, CEKMPKtor_ioInput, CEKMPKtor_ioByteReadPacketCompanion, CEKMPKotlinKTypeProjection, CEKMPKotlinKVariance, CEKMPKotlinKTypeProjectionCompanion;
 
-@protocol CEKMPKoin_coreKoinComponent, CEKMPGetCurrencyExchangeUseCase, CEKMPKotlinx_coroutines_coreCoroutineScope, CEKMPKotlinAutoCloseable, CEKMPKotlinx_coroutines_coreStateFlow, CEKMPKotlinx_coroutines_coreMutableStateFlow, CEKMPCurrencyExchangeRemoteSource, CEKMPKtor_client_coreHttpClientEngine, CEKMPKtor_client_coreHttpClientEngineFactory, CEKMPKtor_client_coreHttpClientPlugin, CEKMPKotlinSuspendFunction0, CEKMPKotlinx_coroutines_coreCancellableContinuation, CEKMPCancellable, CEKMPKotlinx_coroutines_coreFlow, CEKMPKotlinKClass, CEKMPKotlinSuspendFunction1, CEKMPKoin_coreKoinScopeComponent, CEKMPKoin_coreQualifier, CEKMPKotlinLazy, CEKMPKotlinCoroutineContext, CEKMPKotlinIterator, CEKMPKotlinx_coroutines_coreFlowCollector, CEKMPKotlinx_coroutines_coreSharedFlow, CEKMPKotlinx_coroutines_coreMutableSharedFlow, CEKMPKtor_ioCloseable, CEKMPKtor_client_coreHttpClientEngineCapability, CEKMPKtor_utilsAttributes, CEKMPKotlinComparable, CEKMPKotlinFunction, CEKMPKotlinContinuation, CEKMPKotlinKDeclarationContainer, CEKMPKotlinKAnnotatedElement, CEKMPKotlinKClassifier, CEKMPKoin_coreScopeCallback, CEKMPKoin_coreKoinExtension, CEKMPKotlinCoroutineContextElement, CEKMPKotlinCoroutineContextKey, CEKMPKotlinx_coroutines_coreDisposableHandle, CEKMPKotlinSuspendFunction2, CEKMPKtor_httpHeaders, CEKMPKotlinx_coroutines_coreJob, CEKMPKotlinContinuationInterceptor, CEKMPKotlinx_coroutines_coreRunnable, CEKMPKtor_httpHttpMessage, CEKMPKtor_ioByteReadChannel, CEKMPKtor_httpHttpMessageBuilder, CEKMPKtor_client_coreHttpRequest, CEKMPKtor_httpParameters, CEKMPKotlinMapEntry, CEKMPKtor_utilsStringValues, CEKMPKotlinx_coroutines_coreChildHandle, CEKMPKotlinx_coroutines_coreChildJob, CEKMPKotlinSequence, CEKMPKotlinx_coroutines_coreSelectClause0, CEKMPKtor_ioReadSession, CEKMPKotlinAppendable, CEKMPKtor_utilsStringValuesBuilder, CEKMPKtor_httpParametersBuilder, CEKMPKotlinKType, CEKMPKotlinx_coroutines_coreParentJob, CEKMPKotlinx_coroutines_coreSelectInstance, CEKMPKotlinx_coroutines_coreSelectClause, CEKMPKtor_ioObjectPool;
+@protocol CEKMPKoin_coreKoinComponent, CEKMPKotlinx_coroutines_coreCoroutineScope, CEKMPKotlinAutoCloseable, CEKMPGetCurrencyExchangeUseCase, CEKMPKotlinx_coroutines_coreStateFlow, CEKMPCurrencyExchangeRemoteSource, CEKMPKtor_client_coreHttpClientEngine, CEKMPKtor_client_coreHttpClientEngineFactory, CEKMPKtor_client_coreHttpClientPlugin, CEKMPKotlinSuspendFunction0, CEKMPKotlinx_coroutines_coreCancellableContinuation, CEKMPCancellable, CEKMPKotlinx_coroutines_coreFlow, CEKMPKotlinKClass, CEKMPKotlinSuspendFunction1, CEKMPKoin_coreKoinScopeComponent, CEKMPKoin_coreQualifier, CEKMPKotlinLazy, CEKMPKotlinCoroutineContext, CEKMPKotlinIterator, CEKMPKotlinx_coroutines_coreFlowCollector, CEKMPKotlinx_coroutines_coreSharedFlow, CEKMPKtor_ioCloseable, CEKMPKtor_client_coreHttpClientEngineCapability, CEKMPKtor_utilsAttributes, CEKMPKotlinComparable, CEKMPKotlinFunction, CEKMPKotlinContinuation, CEKMPKotlinKDeclarationContainer, CEKMPKotlinKAnnotatedElement, CEKMPKotlinKClassifier, CEKMPKoin_coreScopeCallback, CEKMPKoin_coreKoinExtension, CEKMPKotlinCoroutineContextElement, CEKMPKotlinCoroutineContextKey, CEKMPKotlinx_coroutines_coreDisposableHandle, CEKMPKotlinSuspendFunction2, CEKMPKtor_httpHeaders, CEKMPKotlinx_coroutines_coreJob, CEKMPKotlinContinuationInterceptor, CEKMPKotlinx_coroutines_coreRunnable, CEKMPKtor_httpHttpMessage, CEKMPKtor_ioByteReadChannel, CEKMPKtor_httpHttpMessageBuilder, CEKMPKtor_client_coreHttpRequest, CEKMPKtor_httpParameters, CEKMPKotlinMapEntry, CEKMPKtor_utilsStringValues, CEKMPKotlinx_coroutines_coreChildHandle, CEKMPKotlinx_coroutines_coreChildJob, CEKMPKotlinSequence, CEKMPKotlinx_coroutines_coreSelectClause0, CEKMPKtor_ioReadSession, CEKMPKotlinAppendable, CEKMPKtor_utilsStringValuesBuilder, CEKMPKtor_httpParametersBuilder, CEKMPKotlinKType, CEKMPKotlinx_coroutines_coreParentJob, CEKMPKotlinx_coroutines_coreSelectInstance, CEKMPKotlinx_coroutines_coreSelectClause, CEKMPKtor_ioObjectPool;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -157,7 +157,6 @@ __attribute__((swift_name("DIHelper")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)dIHelper __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) CEKMPDIHelper *shared __attribute__((swift_name("shared")));
-@property (readonly) id<CEKMPGetCurrencyExchangeUseCase> getGetCurrencyExchangeUseCase __attribute__((swift_name("getGetCurrencyExchangeUseCase")));
 @property (readonly) CEKMPCurrencyExchangeViewModel *viewModel __attribute__((swift_name("viewModel")));
 @end
 
@@ -193,9 +192,10 @@ __attribute__((swift_name("CurrencyExchangeViewModel")))
 - (instancetype)initWithGetCurrencyExchange:(id<CEKMPGetCurrencyExchangeUseCase>)getCurrencyExchange __attribute__((swift_name("init(getCurrencyExchange:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 + (instancetype)new __attribute__((unavailable));
-- (void)onChangeProvideNewState:(void (^)(CEKMPCurrencyExchangeViewModelCurrencyState *))provideNewState __attribute__((swift_name("onChange(provideNewState:)")));
-@property (readonly) id<CEKMPKotlinx_coroutines_coreStateFlow> currencyStateFlow __attribute__((swift_name("currencyStateFlow")));
-@property (readonly) id<CEKMPKotlinx_coroutines_coreMutableStateFlow> mutableStateFlow __attribute__((swift_name("mutableStateFlow")));
+- (void)onChangeCurrentDayProvideNewState:(void (^)(CEKMPCurrencyExchangeViewModelCurrencyState *))provideNewState __attribute__((swift_name("onChangeCurrentDay(provideNewState:)")));
+- (void)onChangeLastTenProvideNewState:(void (^)(CEKMPCurrencyExchangeViewModelCurrencyState *))provideNewState __attribute__((swift_name("onChangeLastTen(provideNewState:)")));
+@property (readonly) id<CEKMPKotlinx_coroutines_coreStateFlow> currentCurrencyStateFlow __attribute__((swift_name("currentCurrencyStateFlow")));
+@property (readonly) id<CEKMPKotlinx_coroutines_coreStateFlow> lastTenCurrencyStateFlow __attribute__((swift_name("lastTenCurrencyStateFlow")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -219,7 +219,7 @@ __attribute__((swift_name("GetCurrencyExchangeUseCase")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)callAsFunctionWithCompletionHandler:(void (^)(CEKMPEither<NSArray<CEKMPCurrencyExchangeResponseItem *> *, CEKMPError *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("callAsFunction(completionHandler:)")));
+- (void)callAsFunctionEndpoint:(NSString *)endpoint completionHandler:(void (^)(CEKMPEither<NSArray<CEKMPCurrencyExchangeResponseItem *> *, CEKMPError *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("callAsFunction(endpoint:completionHandler:)")));
 @end
 
 
@@ -237,7 +237,7 @@ __attribute__((swift_name("GetCurrencyExchangeUseCaseV1")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)callAsFunctionWithCompletionHandler:(void (^)(CEKMPEither<NSArray<CEKMPCurrencyExchangeResponseItem *> *, CEKMPError *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("callAsFunction(completionHandler:)")));
+- (void)callAsFunctionEndpoint:(NSString *)endpoint completionHandler:(void (^)(CEKMPEither<NSArray<CEKMPCurrencyExchangeResponseItem *> *, CEKMPError *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("callAsFunction(endpoint:completionHandler:)")));
 - (NSString *)testFunction __attribute__((swift_name("testFunction()")));
 @end
 
@@ -249,7 +249,7 @@ __attribute__((swift_name("CurrencyExchangeRemoteSource")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getCurrencyExchangeWithCompletionHandler:(void (^)(NSArray<CEKMPCurrencyExchangeResponseItem *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getCurrencyExchange(completionHandler:)")));
+- (void)getCurrencyExchangeEndpoint:(NSString *)endpoint completionHandler:(void (^)(NSArray<CEKMPCurrencyExchangeResponseItem *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getCurrencyExchange(endpoint:completionHandler:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -261,7 +261,7 @@ __attribute__((swift_name("KtorCurrencyExchangeRemoteSource")))
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getCurrencyExchangeWithCompletionHandler:(void (^)(NSArray<CEKMPCurrencyExchangeResponseItem *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getCurrencyExchange(completionHandler:)")));
+- (void)getCurrencyExchangeEndpoint:(NSString *)endpoint completionHandler:(void (^)(NSArray<CEKMPCurrencyExchangeResponseItem *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getCurrencyExchange(endpoint:completionHandler:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -626,37 +626,6 @@ __attribute__((swift_name("Kotlinx_coroutines_coreStateFlow")))
 @protocol CEKMPKotlinx_coroutines_coreStateFlow <CEKMPKotlinx_coroutines_coreSharedFlow>
 @required
 @property (readonly) id _Nullable value __attribute__((swift_name("value")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
-@protocol CEKMPKotlinx_coroutines_coreFlowCollector
-@required
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)emitValue:(id _Nullable)value completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreMutableSharedFlow")))
-@protocol CEKMPKotlinx_coroutines_coreMutableSharedFlow <CEKMPKotlinx_coroutines_coreSharedFlow, CEKMPKotlinx_coroutines_coreFlowCollector>
-@required
-
-/**
- * @note annotations
- *   kotlinx.coroutines.ExperimentalCoroutinesApi
-*/
-- (void)resetReplayCache __attribute__((swift_name("resetReplayCache()")));
-- (BOOL)tryEmitValue:(id _Nullable)value __attribute__((swift_name("tryEmit(value:)")));
-@property (readonly) id<CEKMPKotlinx_coroutines_coreStateFlow> subscriptionCount __attribute__((swift_name("subscriptionCount")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreMutableStateFlow")))
-@protocol CEKMPKotlinx_coroutines_coreMutableStateFlow <CEKMPKotlinx_coroutines_coreStateFlow, CEKMPKotlinx_coroutines_coreMutableSharedFlow>
-@required
-- (BOOL)compareAndSetExpect:(id _Nullable)expect update:(id _Nullable)update __attribute__((swift_name("compareAndSet(expect:update:)")));
-- (void)setValue:(id _Nullable)value __attribute__((swift_name("setValue(_:)")));
 @end
 
 __attribute__((swift_name("KotlinException")))
@@ -1101,6 +1070,17 @@ __attribute__((swift_name("KotlinIterator")))
 - (id _Nullable)next __attribute__((swift_name("next()")));
 @end
 
+__attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
+@protocol CEKMPKotlinx_coroutines_coreFlowCollector
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitValue:(id _Nullable)value completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
+@end
+
 __attribute__((swift_name("Ktor_client_coreHttpClientEngineCapability")))
 @protocol CEKMPKtor_client_coreHttpClientEngineCapability
 @required
@@ -1361,7 +1341,7 @@ __attribute__((swift_name("Stately_concurrencyThreadLocalRef")))
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (T _Nullable)get __attribute__((swift_name("get()")));
 - (void)remove __attribute__((swift_name("remove()")));
-- (void)setValue_:(T _Nullable)value __attribute__((swift_name("set(value:)")));
+- (void)setValue:(T _Nullable)value __attribute__((swift_name("set(value:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
