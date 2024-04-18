@@ -54,6 +54,9 @@ kotlin {
                 implementation(compose.ui)
                 implementation(compose.material3)
                 implementation(libs.lifecycle.viewmodel.ktx)
+                implementation(libs.vico.compose.m3)
+                implementation(libs.vico.core)
+                implementation(libs.vico.views)
             }
         }
 

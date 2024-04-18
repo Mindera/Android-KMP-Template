@@ -8,12 +8,8 @@ import com.mindera.kmpexample.launches.domain.model.CurrencyExchangeResponseItem
 import com.mindera.kmpexample.launches.domain.usecase.GetCurrencyExchangeUseCase
 import com.mindera.lifecycle.ViewModel
 import com.mindera.lifecycle.launch
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 
 class CurrencyExchangeViewModel constructor(
     private val getCurrencyExchange: GetCurrencyExchangeUseCase,
@@ -24,35 +20,51 @@ class CurrencyExchangeViewModel constructor(
         val error: Error? = null,
     )
 
-    var mutableStateFlow = MutableStateFlow(value = CurrencyState())
-        private set
+    private var lastTenMutableStateFlow = MutableStateFlow(value = CurrencyState())
+    val lastTenCurrencyStateFlow: StateFlow<CurrencyState>
+        get() = lastTenMutableStateFlow
 
-    val currencyStateFlow: StateFlow<CurrencyState>
-        get() = mutableStateFlow
+    private var currentMutableStateFlow = MutableStateFlow(value = CurrencyState())
+    val currentCurrencyStateFlow: StateFlow<CurrencyState>
+        get() = currentMutableStateFlow
 
-    fun onChange(provideNewState: ((CurrencyState) -> Unit)) {
-        currencyStateFlow.onEach {
-            provideNewState.invoke(it)
-        }.launchIn(CoroutineScope(Dispatchers.Main))
+    fun onChangeLastTen(provideNewState: ((CurrencyState) -> Unit)) {
+        launch {
+            lastTenMutableStateFlow.collect {
+                provideNewState.invoke(it)
+            }
+        }
+    }
+    fun onChangeCurrentDay(provideNewState: ((CurrencyState) -> Unit)) {
+        launch {
+            currentMutableStateFlow.collect {
+                provideNewState.invoke(it)
+            }
+        }
     }
 
 // This example to access data in IOS
-//    class AppViewModel: ObservableObject {
-//        let coreModel : CurrencyExchangeViewModel = DIHelper().viewModel
+//class AppViewModel: ObservableObject {
+//    let coreModel  = DIHelper().viewModel
 //
-//        func fetchData() {
-//            coreModel.onChange { newState in
-//                    print(newState.launches)
-//            }
+//    init() {
+//        coreModel.onChange { newState in
+//                if newState.loading {
+//                    print("Loading")
+//                } else if newState.error != nil {
+//                    print("Error: \(String(describing: newState.error))")
+//                } else {
+//                    print("Response: \(newState.launches)")
+//                }
 //        }
 //    }
+//}
 
     init {
         launch {
-            getCurrencyExchange().on(
+            getCurrencyExchange("A/last/10/").on(
                 left = {
-                    println(">>> Rates: $it")
-                    mutableStateFlow.value = with(mutableStateFlow.value) {
+                    lastTenMutableStateFlow.value = with(lastTenMutableStateFlow.value) {
                         copy(
                             loading = false,
                             launches = it.immutable(),
@@ -61,8 +73,28 @@ class CurrencyExchangeViewModel constructor(
                     }
                 },
                 right = {
-                    println(">>> Rates error: $it")
-                    mutableStateFlow.value = with(mutableStateFlow.value) {
+                    lastTenMutableStateFlow.value = with(lastTenMutableStateFlow.value) {
+                        copy(
+                            loading = false,
+                            launches = ImmutableList(emptyList()),
+                            error = it,
+                        )
+                    }
+                },
+            )
+
+            getCurrencyExchange("A").on(
+                left = {
+                    currentMutableStateFlow.value = with(currentMutableStateFlow.value) {
+                        copy(
+                            loading = false,
+                            launches = it.immutable(),
+                            error = null,
+                        )
+                    }
+                },
+                right = {
+                    currentMutableStateFlow.value = with(currentMutableStateFlow.value) {
                         copy(
                             loading = false,
                             launches = ImmutableList(emptyList()),

@@ -18,9 +18,9 @@ class GetCurrencyExchangeUseCaseV1 constructor(
     /**
      * Returns Either<List<CurrencyExchangeResponseItem>, Error>
      */
-    override suspend fun invoke(): Either<List<CurrencyExchangeResponseItem>, Error> = withContext(Default) {
+    override suspend fun invoke(endpoint: String): Either<List<CurrencyExchangeResponseItem>, Error> = withContext(Default) {
         try {
-            Either.Left(remote.getCurrencyExchange())
+            Either.Left(remote.getCurrencyExchange(endpoint))
         } catch (e: Error) {
             Either.Right(e)
         }

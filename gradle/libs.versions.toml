@@ -63,6 +63,7 @@ tealium-remotecommands-firebase = "1.2.0"
 zoomable = "1.4.3"
 koin = "3.5.3"
 lifecycle-viewmodel = "2.8.0-alpha03"
+vico = "2.0.0-alpha.14"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
@@ -207,3 +208,7 @@ mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "moc
 mockk-jvm = { group = "io.mockk", name = "mockk-jvm", version.ref = "mockk" }
 
 zoomable = { group = "net.engawapg.lib", name = "zoomable", version.ref = "zoomable" }
+
+vico-compose-m3 = { group = "com.patrykandpatrick.vico", name = "compose-m3", version.ref = "vico" }
+vico-core = { group = "com.patrykandpatrick.vico", name = "core", version.ref = "vico" }
+vico-views = { group = "com.patrykandpatrick.vico", name = "views", version.ref = "vico" }

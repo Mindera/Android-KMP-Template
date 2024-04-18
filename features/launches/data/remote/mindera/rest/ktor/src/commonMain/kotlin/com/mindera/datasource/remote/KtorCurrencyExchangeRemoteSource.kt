@@ -13,11 +13,10 @@ class KtorCurrencyExchangeRemoteSource constructor(
     private val client: HttpClient,
 ) : CurrencyExchangeRemoteSource {
 
+    override suspend fun getCurrencyExchange(endpoint: String): List<DomainCurrencyExchangeResponseItem> =
+        getCurrencyExchangeList(endpoint)
 
-    override suspend fun getCurrencyExchange(): List<DomainCurrencyExchangeResponseItem> =
-        getCurrencyExchange("A/last/10/")
-
-    private suspend fun getCurrencyExchange(table: String): List<DomainCurrencyExchangeResponseItem> =
+    private suspend fun getCurrencyExchangeList(table: String): List<DomainCurrencyExchangeResponseItem> =
         client.get("$baseUrl/$table")
             .body<List<CurrencyExchangeResponseItem>>().map {
                 it.toDomain()
