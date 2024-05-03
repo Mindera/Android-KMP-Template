@@ -6,6 +6,9 @@ plugins {
 
 group = "com.mindera.launches.data.remote.mindera.rest.sample"
 version = "1.0.0"
+dependencies {
+    implementation(libs.androidx.appcompat)
+}
 
 kotlin {
     androidTarget()
@@ -17,15 +20,18 @@ kotlin {
     }
 
     sourceSets {
-        val androidMain by getting {
-            dependencies {}
-        }
-
         val commonMain by getting {
             dependencies {
-
             }
         }
+
+        val androidMain by getting {
+            dependencies {
+                implementation(libs.androidx.appcompat)
+            }
+        }
+
+
 
         if (iOSEnabled) {
             val iosX64Main by getting

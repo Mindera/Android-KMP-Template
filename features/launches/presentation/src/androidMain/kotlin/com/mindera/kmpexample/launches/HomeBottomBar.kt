@@ -1,6 +1,7 @@
 package com.mindera.kmpexample.launches
 
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemColors
@@ -12,7 +13,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
@@ -20,26 +20,26 @@ import com.mindera.kmpexample.features.launches.presentation.R
 
 
 @Composable
-fun HomeBottomBar() {
+fun HomeBottomBar(onNavBarClick: (Int) -> Unit) {
 
     var selectedItem by remember { mutableStateOf(0) }
 
     val bottomNavItems = listOf(
+//        BottomNavItem( TODO Will be enable in the future
+//            name = stringResource(R.string.gold),
+//            route = stringResource(R.string.gold),
+//            icon = ImageVector.vectorResource(id = R.drawable.ic_gold_24),
+//        ),
         BottomNavItem(
-            name = stringResource(R.string.gold),
-            route = stringResource(R.string.gold),
-            icon = ImageVector.vectorResource(id = R.drawable.ic_gold_24),
-        ),
-        BottomNavItem(
-            name = stringResource(R.string.chf_exchange),
-            route = stringResource(R.string.chf_exchange),
+            name = stringResource(R.string.currency_exchange),
+            route = stringResource(R.string.currency_exchange),
             icon = ImageVector.vectorResource(id = R.drawable.ic_currency_24),
         ),
-        BottomNavItem(
-            name = stringResource(R.string.gbp_exchange),
-            route = stringResource(R.string.gbp_exchange),
-            icon =  ImageVector.vectorResource(id = R.drawable.ic_currency_24),
-        ),
+//        BottomNavItem( TODO Will be enable in the future
+//            name = stringResource(R.string.gbp_exchange),
+//            route = stringResource(R.string.gbp_exchange),
+//            icon =  ImageVector.vectorResource(id = R.drawable.ic_currency_24),
+//        ),
         BottomNavItem(
             name = stringResource(R.string.settings),
             route = stringResource(R.string.settings),
@@ -49,14 +49,14 @@ fun HomeBottomBar() {
 
     NavigationBar(
         containerColor =
-        colorResource(R.color.lightYellow)
+        MaterialTheme.colorScheme.primaryContainer
     ) {
         bottomNavItems.forEachIndexed { index, item ->
             NavigationBarItem(
                 colors = NavigationBarItemColors(
-                    selectedIconColor = Color.Black,
-                    selectedTextColor = Color.Black,
-                    selectedIndicatorColor = colorResource(R.color.lightYellow2),
+                    selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                    selectedTextColor = MaterialTheme.colorScheme.onPrimary,
+                    selectedIndicatorColor = MaterialTheme.colorScheme.onPrimaryContainer,
                     unselectedIconColor = Color.Gray,
                     unselectedTextColor = Color.Gray,
                     disabledIconColor = Color.LightGray,
@@ -65,6 +65,7 @@ fun HomeBottomBar() {
                 selected = selectedItem == index,
                 onClick = {
                     selectedItem = index
+                    onNavBarClick.invoke(selectedItem)
                 },
                 label = {
                     Text(

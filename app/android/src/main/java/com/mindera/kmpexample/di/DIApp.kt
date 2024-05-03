@@ -1,11 +1,11 @@
 package com.mindera.kmpexample.di
 
-import android.app.Application
 import com.mindera.di.appModule
+import com.mindera.kmpexample.launches.language.LanguageApp
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class DIApp : Application() {
+class DIApp : LanguageApp() {
 
     override fun onCreate() {
         super.onCreate()

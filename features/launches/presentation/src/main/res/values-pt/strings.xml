@@ -1,0 +1,19 @@
+<resources>
+    <string name="mindera">Mindera</string>
+    <string name="graph_view">Visualização de gráfico</string>
+    <string name="list_view">Visualização de lista</string>
+    <string name="gold">Ouro</string>
+    <string name="currency_exchange">Câmbio monetário</string>
+    <string name="chf_exchange">Câmbio CHF</string>
+    <string name="gbp_exchange">Câmbio GBP</string>
+    <string name="settings">Configurações</string>
+    <string name="dark_theme">Tema escuro</string>
+    <string name="language">Idioma</string>
+    <string name="english">Inglês</string>
+    <string name="portuguese">Português</string>
+    <string name="app_size">Tamanho do aplicativo</string>
+    <string name="app_version">Versão do aplicativo</string>
+    <string name="repository">Repositório</string>
+    <string name="github">GitHub</string>
+    <string name="open_source">Código aberto</string>
+</resources>

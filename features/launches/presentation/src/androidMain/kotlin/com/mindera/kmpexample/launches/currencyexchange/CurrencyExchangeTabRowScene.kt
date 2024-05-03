@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.TabRowDefaults
@@ -17,7 +18,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.mindera.kmpexample.features.launches.presentation.R
@@ -33,13 +33,13 @@ fun CurrencyExchangeTabRowScene(tabClick: (Int) -> Unit) {
     ) {
         TabRow(
             selectedTabIndex = tabIndex,
-            containerColor = colorResource(R.color.lightYellow),
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
             contentColor = Color.Black,
             indicator = { tabPositions ->
                 if (tabIndex < tabPositions.size) {
                     TabRowDefaults.SecondaryIndicator(
                         modifier = Modifier.tabIndicatorOffset(tabPositions[tabIndex]),
-                        color = Color.Black
+                        color = MaterialTheme.colorScheme.tertiary
                     )
                 }
             }
@@ -52,7 +52,7 @@ fun CurrencyExchangeTabRowScene(tabClick: (Int) -> Unit) {
                         tabIndex = index
                         tabClick.invoke(tabIndex)
                     },
-                    selectedContentColor = Color.Black,
+                    selectedContentColor = MaterialTheme.colorScheme.onPrimary,
                     unselectedContentColor = Color.Gray,
                 )
             }
