@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.ui.Modifier
 import com.mindera.isDarkMode
-import com.mindera.kmpexample.launches.language.LocaleHelper
-import com.mindera.kmpexample.launches.language.LocaleHelper.getLanguageSharedPreference
+import com.mindera.kmpexample.currencyexchange.language.LocaleHelper
+import com.mindera.kmpexample.currencyexchange.language.LocaleHelper.getLanguageSharedPreference
 import com.mindera.kmpexample.presentation.App
 import com.mindera.kmpexample.ui.theme.CurrencyExchangeTheme
 import moe.tlaster.precompose.lifecycle.setContent

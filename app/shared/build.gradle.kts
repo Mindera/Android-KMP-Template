@@ -52,15 +52,15 @@ fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.framework(
 }
 
 private val modules: List<DelegatingProjectDependency> = listOf(
-    projects.features.launches.data,
-    projects.features.launches.data.remote.mindera.rest.ktor,
-    projects.features.launches.domain,
+    projects.features.currencyexchange.data,
+    projects.features.currencyexchange.data.remote.mindera.rest.ktor,
+    projects.features.currencyexchange.domain,
     projects.common.api.mindera.rest.ktor,
     projects.common.api.mindera.rest.ktor.interceptors,
     projects.common.coroutinesKtx,
     projects.common.domain,
-    projects.features.launches.di,
-    projects.features.launches.presentation,
+    projects.features.currencyexchange.di,
+    projects.features.currencyexchange.presentation,
 )
 
 kotlin {

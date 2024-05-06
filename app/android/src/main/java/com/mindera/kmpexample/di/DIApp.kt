@@ -1,7 +1,7 @@
 package com.mindera.kmpexample.di
 
 import com.mindera.di.appModule
-import com.mindera.kmpexample.launches.language.LanguageApp
+import com.mindera.kmpexample.currencyexchange.language.LanguageApp
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

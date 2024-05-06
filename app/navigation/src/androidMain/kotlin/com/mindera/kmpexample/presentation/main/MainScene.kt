@@ -2,8 +2,8 @@ package com.mindera.kmpexample.presentation.main
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import com.mindera.kmpexample.launches.HomeScreenScene
-import com.mindera.kmpexample.launches.opensource.OpensourceScene
+import com.mindera.kmpexample.currencyexchange.HomeScreenScene
+import com.mindera.kmpexample.currencyexchange.opensource.OpensourceScene
 import com.mindera.kmpexample.presentation.main.Destination.CurrencyExchange
 import com.mindera.kmpexample.presentation.main.Destination.OpenSource
 import com.mindera.precompose.navigation.NavHost

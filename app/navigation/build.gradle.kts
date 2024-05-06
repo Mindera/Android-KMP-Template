@@ -20,7 +20,7 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.precompose)
-                implementation(projects.features.launches.presentation)
+                implementation(projects.features.currencyexchange.presentation)
                 implementation(projects.libraries.precompose)
             }
         }

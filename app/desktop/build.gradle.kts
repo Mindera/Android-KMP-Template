@@ -24,7 +24,7 @@ kotlin {
                 implementation(libs.precompose)
                 implementation(projects.app.navigation)
                 implementation(libs.koin.core)
-                implementation(projects.features.launches.di)
+                implementation(projects.features.currencyexchange.di)
             }
         }
     }
