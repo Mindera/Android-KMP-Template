@@ -45,10 +45,11 @@ import com.mindera.isDarkMode
 import com.mindera.kmpexample.features.launches.presentation.R
 import com.mindera.kmpexample.launches.language.LocaleHelper
 import com.mindera.kmpexample.launches.language.LocaleHelper.setLocale
+import moe.tlaster.precompose.navigation.Navigator
 
 @Suppress("MagicNumber")
 @Composable
-fun SettingsScene(uiUpdate: () -> Unit) {
+fun SettingScene(navigator: Navigator, uiUpdate: () -> Unit) {
     val context = LocalContext.current
     var checked by remember { mutableStateOf(isDarkMode(context)) }
     var expanded by remember { mutableStateOf(false) }
@@ -199,8 +200,10 @@ fun SettingsScene(uiUpdate: () -> Unit) {
 
         card(height = 60.dp) {
             Row(
-                modifier = Modifier.fillMaxSize()
-                    .padding(start = 15.dp, end = 15.dp),
+                modifier = Modifier.fillMaxSize().clickable {
+//                    screen.invoke(NavigationSelector.Opensource)
+                    navigator.navigate("opensource")
+                }.padding(start = 15.dp, end = 15.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {

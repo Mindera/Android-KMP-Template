@@ -28,11 +28,22 @@ plugins {
 //    alias(libs.plugins.apollo).apply(false)
     alias(libs.plugins.detekt)
     alias(libs.plugins.ksp).apply(false)
+    id("com.mikepenz.aboutlibraries.plugin") version "11.1.3"
 }
 
 buildscript {
+//    dependencies {
+////        classpath(libs.sqldelight.plugin)
+//    }
+
+    repositories {
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
+    }
     dependencies {
-//        classpath(libs.sqldelight.plugin)
+        classpath(libs.sqldelight.plugin)
+        classpath("com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:11.1.3")
     }
 }
 

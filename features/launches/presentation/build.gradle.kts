@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.compose.multiplatform)
     alias(libs.plugins.android.library)
+    id("com.mikepenz.aboutlibraries.plugin")
 }
 
 group = "com.mindera.kmpexample.features.launches.presentation"
@@ -57,7 +58,9 @@ kotlin {
                 implementation(libs.vico.compose.m3)
                 implementation(libs.vico.core)
                 implementation(libs.vico.views)
+                implementation(libs.precompose)
                 implementation(projects.features.launches.data.remote.mindera.rest.sample)
+                implementation ("com.mikepenz:aboutlibraries-compose-m3:11.1.3")
             }
         }
 

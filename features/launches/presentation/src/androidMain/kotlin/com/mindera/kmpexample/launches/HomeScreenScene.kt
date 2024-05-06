@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.Color
 import com.mindera.kmpexample.composables.CurrencyExchangeScreen
 import com.mindera.kmpexample.launches.currencyexchange.CurrencyExchangeHeaderScene
 import com.mindera.kmpexample.launches.currencyexchange.CurrencyExchangeTabRowScene
-import com.mindera.kmpexample.launches.setting.SettingsScene
+import com.mindera.kmpexample.launches.setting.SettingScene
 import com.mindera.kmpexample.launches.viewmodel.CurrencyExchangeViewModel
 import com.mindera.precompose.navigation.BackHandler
 import com.patrykandpatrick.vico.compose.axis.horizontal.rememberBottomAxis
@@ -40,6 +40,7 @@ import com.patrykandpatrick.vico.core.component.shape.shader.DynamicShaders
 import com.patrykandpatrick.vico.core.model.CartesianChartModelProducer
 import com.patrykandpatrick.vico.core.model.lineSeries
 import kotlinx.coroutines.launch
+import moe.tlaster.precompose.navigation.Navigator
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -49,7 +50,7 @@ class KoinHelper : KoinComponent {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreenScene(onBack: (() -> Unit)) {
+fun HomeScreenScene(onBack: (() -> Unit), navigator: Navigator) {
     BackHandler(onBack = onBack)
 
     val coroutineScope = rememberCoroutineScope()
@@ -145,7 +146,7 @@ fun HomeScreenScene(onBack: (() -> Unit)) {
                     }
                 }
             } else {
-                SettingsScene{
+                SettingScene(navigator = navigator){
                     coroutineScope.launch {
                         tabClick = 0
                         pagerState.scrollToPage(0)
