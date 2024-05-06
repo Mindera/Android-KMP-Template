@@ -54,9 +54,7 @@ fun HomeScreenScene(onBack: (() -> Unit), navigator: Navigator) {
     BackHandler(onBack = onBack)
 
     val coroutineScope = rememberCoroutineScope()
-    val pagerState = rememberPagerState(pageCount = {
-        2
-    })
+    val pagerState = rememberPagerState(pageCount = { 2 })
     var tabClick by remember { mutableStateOf(0) }
     val viewModel = remember { KoinHelper().viewModel }
     val modelProducer = remember { CartesianChartModelProducer.build() }

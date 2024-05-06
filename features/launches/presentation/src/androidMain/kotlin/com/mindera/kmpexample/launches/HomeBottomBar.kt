@@ -25,21 +25,11 @@ fun HomeBottomBar(onNavBarClick: (Int) -> Unit) {
     var selectedItem by remember { mutableStateOf(0) }
 
     val bottomNavItems = listOf(
-//        BottomNavItem( TODO Will be enable in the future
-//            name = stringResource(R.string.gold),
-//            route = stringResource(R.string.gold),
-//            icon = ImageVector.vectorResource(id = R.drawable.ic_gold_24),
-//        ),
         BottomNavItem(
             name = stringResource(R.string.currency_exchange),
             route = stringResource(R.string.currency_exchange),
             icon = ImageVector.vectorResource(id = R.drawable.ic_currency_24),
         ),
-//        BottomNavItem( TODO Will be enable in the future
-//            name = stringResource(R.string.gbp_exchange),
-//            route = stringResource(R.string.gbp_exchange),
-//            icon =  ImageVector.vectorResource(id = R.drawable.ic_currency_24),
-//        ),
         BottomNavItem(
             name = stringResource(R.string.settings),
             route = stringResource(R.string.settings),
