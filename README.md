@@ -5,9 +5,10 @@ This project demonstrates the use of Kotlin Multiplatform in an Android applicat
 ## Features
 
 - **Cross-platform Logic**: Utilize Kotlin to handle business logic that runs both on iOS and Android.
-- **Native UI**: Android native UI implementation with SwiftUI to ensure the best user experience.
+- **Native UI**: Android native UI implementation with Compose Multiplatform to ensure the best user experience.
 - **MVVM Pattern**: Implementation using MVVM architecture 
 - **Reusable Components**: Showcases how to structure your Kotlin code to maximize reuse between platforms.
+- **Other**: Also supports building for Desktop 
 
 
 
