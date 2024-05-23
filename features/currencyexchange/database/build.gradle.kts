@@ -10,6 +10,7 @@ version = "1.0.0"
 
 kotlin {
     androidTarget()
+    jvm()
     iOS {
         iosX64()
         iosArm64()
