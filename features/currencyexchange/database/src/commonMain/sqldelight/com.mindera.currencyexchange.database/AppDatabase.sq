@@ -1,0 +1,23 @@
+CREATE TABLE Currencies (
+    tableName TEXT NOT NULL,
+    no TEXT NOT NULL,
+    effectiveDate TEXT NOT NULL,
+    rates TEXT NOT NULL
+);
+
+inserCurrencies:
+INSERT INTO Currencies(tableName, no, effectiveDate, rates)
+VALUES(?, ?, ?, ?);
+
+selectOneCurrency:
+SELECT Currencies.*
+FROM Currencies
+WHERE Currencies.effectiveDate = ?;
+
+removeAllCurrencies:
+DELETE FROM Currencies;
+
+selectAllCurrencies:
+SELECT Currencies.*
+FROM Currencies
+ORDER BY Currencies.effectiveDate DESC;

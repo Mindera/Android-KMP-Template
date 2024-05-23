@@ -53,7 +53,6 @@ runner = "1.5.2"
 serialization = "1.5.0"
 services = "4.3.15"
 splash = "1.0.1"
-sqldelight = "1.5.5"
 tagmanagement-dispatcher = "1.2.0"
 tealium = "1.5.2"
 tealium-lifecycle = "1.1.1"
@@ -64,6 +63,7 @@ zoomable = "1.4.3"
 koin = "3.5.3"
 lifecycle-viewmodel = "2.8.0-alpha03"
 vico = "2.0.0-alpha.14"
+sqlDelight = "2.0.1"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
@@ -75,7 +75,8 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-sqldelight = { id = "com.squareup.sqldelight", version.ref = "sqldelight" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
+
 
 [libraries]
 android-desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
@@ -187,11 +188,9 @@ precompose-viewmodel = { group = "moe.tlaster", name = "precompose-viewmodel", v
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle-viewmodel" }
 lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel" }
 
-sqldelight-android-driver = { group = "com.squareup.sqldelight", name = "android-driver", version.ref = "sqldelight" }
-sqldelight-coroutines-extensions = { group = "com.squareup.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight" }
-sqldelight-native-driver = { group = "com.squareup.sqldelight", name = "native-driver", version.ref = "sqldelight" }
-sqldelight-plugin = { group = "com.squareup.sqldelight", name = "gradle-plugin", version.ref = "sqldelight" }
-sqldelight-sqlite-driver = { group = "com.squareup.sqldelight", name = "sqlite-driver", version.ref = "sqldelight" }
+android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
+native-driver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
+runtime = { module = "app.cash.sqldelight:runtime", version.ref = "sqlDelight" }
 
 tealium-collect-dispatcher = { group = "com.tealium", name = "kotlin-collect-dispatcher", version.ref = "collect-dispatcher" }
 tealium-core = { group = "com.tealium", name = "kotlin-core", version.ref = "tealium" }

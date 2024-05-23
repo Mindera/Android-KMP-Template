@@ -9,4 +9,5 @@ import kotlin.native.ObjCName
 fun interface GetCurrencyExchangeUseCase {
     @ObjCName("callAsFunction")
     suspend operator fun invoke(endpoint: String): Either<List<CurrencyExchangeResponseItem>, Error>
+
 }

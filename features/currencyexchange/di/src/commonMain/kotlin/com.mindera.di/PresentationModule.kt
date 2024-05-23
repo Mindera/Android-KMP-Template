@@ -16,7 +16,8 @@ fun appModule() = module {
     single<CurrencyExchangeRemoteSource> {
         KtorCurrencyExchangeRemoteSource(
             baseUrl = "https://api.nbp.pl/api/exchangerates/tables",
-            client = get()
+            client = get(),
+            sqlDriver = get(),
         )
     }
 

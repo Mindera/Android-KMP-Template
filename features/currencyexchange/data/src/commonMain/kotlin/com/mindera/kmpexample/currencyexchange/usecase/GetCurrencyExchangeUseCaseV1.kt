@@ -15,6 +15,7 @@ class GetCurrencyExchangeUseCaseV1 constructor(
     private val remote: CurrencyExchangeRemoteSource,
 ) : GetCurrencyExchangeUseCase {
 
+
     /**
      * Returns Either<List<CurrencyExchangeResponseItem>, Error>
      */
@@ -22,9 +23,12 @@ class GetCurrencyExchangeUseCaseV1 constructor(
         try {
             Either.Left(remote.getCurrencyExchange(endpoint))
         } catch (e: Error) {
-            Either.Right(e)
+            println("API Error ${e}")
+            if (remote.getAllCurrencies().isEmpty()) {
+                Either.Right(e)
+            } else {
+                Either.Left(remote.getAllCurrencies())
+            }
         }
     }
-
-    fun testFunction() = "Test DI"
 }

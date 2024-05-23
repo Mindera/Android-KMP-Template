@@ -21,6 +21,8 @@ fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.framework(
         iosSimulatorArm64(),
     ).forEach {
         it.binaries.framework(name) {
+//          Required to add for SQLDelight but if project on compose multiplatform then needs to add in xcode project
+            linkerOpts.add("-lsqlite3")
             freeCompilerArgs += listOf(
                 "-Xexport-kdoc",
             )
@@ -61,6 +63,7 @@ private val modules: List<DelegatingProjectDependency> = listOf(
     projects.common.domain,
     projects.features.currencyexchange.di,
     projects.features.currencyexchange.presentation,
+    projects.features.currencyexchange.database,
 )
 
 kotlin {
