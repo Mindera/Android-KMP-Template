@@ -24,25 +24,19 @@ plugins {
     alias(libs.plugins.android.application).apply(false)
     alias(libs.plugins.android.library).apply(false)
     alias(libs.plugins.compose.multiplatform).apply(false)
-//    alias(libs.plugins.sqldelight).apply(false)
-//    alias(libs.plugins.apollo).apply(false)
     alias(libs.plugins.detekt)
     alias(libs.plugins.ksp).apply(false)
-    id("com.mikepenz.aboutlibraries.plugin") version "11.1.3"
+    alias(libs.plugins.mikepenz)
 }
 
 buildscript {
-//    dependencies {
-////        classpath(libs.sqldelight.plugin)
-//    }
-
     repositories {
         maven {
             url = uri("https://plugins.gradle.org/m2/")
         }
     }
     dependencies {
-        classpath("com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:11.1.3")
+        classpath(libs.mikepenz)
     }
 }
 
