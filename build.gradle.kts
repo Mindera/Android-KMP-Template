@@ -42,7 +42,6 @@ buildscript {
         }
     }
     dependencies {
-//        classpath(libs.sqldelight.plugin)
         classpath("com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:11.1.3")
     }
 }
