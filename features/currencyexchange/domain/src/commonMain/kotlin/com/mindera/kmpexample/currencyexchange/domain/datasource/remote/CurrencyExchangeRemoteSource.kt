@@ -5,7 +5,7 @@ import com.mindera.rest.CurrencyExchangeResponseItem
 
 interface CurrencyExchangeRemoteSource {
     suspend fun getCurrencyExchange(endpoint: String): List<DomainCurrencyExchangeResponseItem>
-    fun insertCurrency(currency: CurrencyExchangeResponseItem)
+    suspend fun insertCurrency(currency: CurrencyExchangeResponseItem)
     suspend fun getAllCurrencies(): List<DomainCurrencyExchangeResponseItem>
     suspend fun removeAllCurrencies()
 }

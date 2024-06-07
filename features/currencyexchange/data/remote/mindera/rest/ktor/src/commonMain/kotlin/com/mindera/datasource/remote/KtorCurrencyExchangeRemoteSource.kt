@@ -26,7 +26,7 @@ class KtorCurrencyExchangeRemoteSource constructor(
        return getAllCurrencies()
     }
 
-    override fun insertCurrency(currency: CurrencyExchangeResponseItem) =
+    override suspend fun insertCurrency(currency: CurrencyExchangeResponseItem) =
         database.insertCurrency(currency)
 
 
