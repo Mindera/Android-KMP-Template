@@ -30,13 +30,14 @@ kotlin {
                 implementation(libs.ktor.logging)
                 implementation(libs.ktor.serialization)
                 implementation(libs.kotlinx.serialization)
-                implementation(projects.features.currencyexchange.data.remote.mindera.rest.schema)
                 implementation(projects.features.currencyexchange.domain)
-
-                // sample
-                implementation(projects.features.currencyexchange.data.remote.mindera.rest.sample)
-
                 implementation(libs.runtime)
+                implementation(
+                    projects.features.currencyexchange.data.remote.mindera.rest.schema
+                )
+                implementation(
+                    projects.features.currencyexchange.data.remote.mindera.rest.sample
+                )
             }
         }
 
