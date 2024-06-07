@@ -32,12 +32,8 @@ kotlin {
                 implementation(libs.kotlinx.serialization)
                 implementation(projects.features.currencyexchange.domain)
                 implementation(libs.runtime)
-                implementation(
-                    projects.features.currencyexchange.data.remote.mindera.rest.schema
-                )
-                implementation(
-                    projects.features.currencyexchange.data.remote.mindera.rest.sample
-                )
+                implementation(projects.features.currencyexchange.data.remote.mindera.rest.schema)
+                implementation(projects.features.currencyexchange.data.remote.mindera.rest.sample)
             }
         }
 

@@ -23,9 +23,7 @@ kotlin {
                 implementation(libs.kotlinx.datetime)
                 implementation(projects.common.coroutinesKtx)
                 implementation(projects.common.domain)
-                implementation(
-                    projects.features.currencyexchange.data.remote.mindera.rest.schema
-                )
+                implementation(projects.features.currencyexchange.data.remote.mindera.rest.schema)
             }
         }
     }
