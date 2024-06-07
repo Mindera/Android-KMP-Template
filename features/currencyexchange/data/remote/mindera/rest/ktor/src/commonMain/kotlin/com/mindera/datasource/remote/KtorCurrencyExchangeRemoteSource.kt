@@ -1,5 +1,7 @@
 package com.mindera.datasource.remote
 
+import app.cash.sqldelight.db.SqlDriver
+import com.mindera.database.Database
 import com.mindera.datasource.remote.converters.toDomain
 import com.mindera.kmpexample.currencyexchange.domain.datasource.remote.CurrencyExchangeRemoteSource
 import com.mindera.rest.CurrencyExchangeResponseItem
@@ -11,16 +13,30 @@ import com.mindera.kmpexample.currencyexchange.domain.model.CurrencyExchangeResp
 class KtorCurrencyExchangeRemoteSource constructor(
     private val baseUrl: String,
     private val client: HttpClient,
+    sqlDriver: SqlDriver
 ) : CurrencyExchangeRemoteSource {
 
-    override suspend fun getCurrencyExchange(endpoint: String): List<DomainCurrencyExchangeResponseItem> =
-        getCurrencyExchangeList(endpoint)
+    private val database = Database(sqlDriver)
 
-    private suspend fun getCurrencyExchangeList(table: String): List<DomainCurrencyExchangeResponseItem> =
-        client.get("$baseUrl/$table")
+    override suspend fun getCurrencyExchange(endpoint: String): List<DomainCurrencyExchangeResponseItem> {
+        client.get("$baseUrl/$endpoint")
             .body<List<CurrencyExchangeResponseItem>>().map {
-                it.toDomain()
+                insertCurrency(it)
             }
+       return getAllCurrencies()
+    }
 
+    override suspend fun insertCurrency(currency: CurrencyExchangeResponseItem) =
+        database.insertCurrency(currency)
+
+
+    override suspend fun getAllCurrencies(): List<DomainCurrencyExchangeResponseItem> =
+        database.getAllCurrencies().map {
+            it.toDomain()
+        }
+
+
+    override suspend fun removeAllCurrencies() =
+        database.removeAllCurrencies()
 
 }

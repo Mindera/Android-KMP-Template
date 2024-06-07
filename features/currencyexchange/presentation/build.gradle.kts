@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.compose.multiplatform)
     alias(libs.plugins.android.library)
-    id("com.mikepenz.aboutlibraries.plugin")
+    alias(libs.plugins.mikepenz)
 }
 
 group = "com.mindera.kmpexample.features.currencyexchange.presentation"

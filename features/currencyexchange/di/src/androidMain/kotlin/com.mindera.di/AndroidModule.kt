@@ -1,11 +1,10 @@
 package com.mindera.di
 
-import com.mindera.kmpexample.currencyexchange.viewmodel.CurrencyExchangeViewModel
+import com.mindera.database.AndroidDatabaseDriverFactory
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 
 fun androidModule() = module {
-
-    factory { CurrencyExchangeViewModel(getCurrencyExchange = get()) }
-
+    factory { AndroidDatabaseDriverFactory(context = androidContext()).createDriver() }
 }

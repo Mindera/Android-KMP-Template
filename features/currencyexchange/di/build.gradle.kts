@@ -18,6 +18,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(projects.features.currencyexchange.database)
                 implementation(projects.features.currencyexchange.domain)
                 implementation(projects.features.currencyexchange.data)
                 implementation(projects.features.currencyexchange.data.remote.mindera.rest.ktor)
@@ -35,7 +36,7 @@ kotlin {
             dependsOn(commonMain)
             dependencies {
                 implementation(libs.ktor.okhttp)
-
+                implementation(libs.koin.androidx.compose)
             }
         }
 

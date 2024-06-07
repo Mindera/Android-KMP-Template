@@ -71,30 +71,17 @@ class CurrencyExchangeViewModel constructor(
                             error = null,
                         )
                     }
-                },
-                right = {
-                    lastTenMutableStateFlow.value = with(lastTenMutableStateFlow.value) {
-                        copy(
-                            loading = false,
-                            currencyExchange = ImmutableList(emptyList()),
-                            error = it,
-                        )
-                    }
-                },
-            )
 
-            getCurrencyExchange("A").on(
-                left = {
                     currentMutableStateFlow.value = with(currentMutableStateFlow.value) {
                         copy(
                             loading = false,
-                            currencyExchange = it.immutable(),
+                            currencyExchange = ImmutableList(listOf(it.first())),
                             error = null,
                         )
                     }
                 },
                 right = {
-                    currentMutableStateFlow.value = with(currentMutableStateFlow.value) {
+                    lastTenMutableStateFlow.value = with(lastTenMutableStateFlow.value) {
                         copy(
                             loading = false,
                             currencyExchange = ImmutableList(emptyList()),
